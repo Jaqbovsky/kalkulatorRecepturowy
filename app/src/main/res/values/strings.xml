@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Kalkulator Recepturowy</string>
+    <string name="kalkulator_recepturowy">Kalkulator Recepturowy</string>
+    <string name="menu_name">Kalkulator Recepturowy</string>
+
+    <string name="drawerOpen">drawerOpen</string>
+    <string name="drawerClose">drawerClose</string>
 </resources>
