@@ -3,5 +3,7 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="colorPharmacy">#2F494646</color>
+    <color name="colorPharmacy">#03A9F4</color>
+    <color name="colorVitSelectBtn">#7A89C368</color>
+    <color name="spinnerColor">#A882898F</color>
 </resources>

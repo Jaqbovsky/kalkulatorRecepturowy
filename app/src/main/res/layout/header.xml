@@ -2,25 +2,25 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@color/colorPharmacy"
+    android:background="#36B3EC"
     android:layout_width="match_parent"
     android:layout_height="190dp">
 
     <ImageView
-        android:layout_width="141dp"
-        android:layout_height="142dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginLeft="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:scaleType="fitCenter"
-        android:src="@mipmap/ic_launcher_round" />
+        android:src="@drawable/ic_pharmacy" />
 
     <TextView
-        android:layout_width="257dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
+        android:layout_gravity="center"
+        android:gravity="center"
         android:layout_marginTop="5dp"
         android:text="@string/menu_name"
-        android:textSize="20sp" />
+        android:textSize="22sp" />
 
 </LinearLayout>

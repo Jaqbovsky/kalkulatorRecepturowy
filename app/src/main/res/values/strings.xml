@@ -1,8 +1,15 @@
 <resources>
     <string name="app_name">Kalkulator Recepturowy</string>
     <string name="kalkulator_recepturowy">Kalkulator Recepturowy</string>
-    <string name="menu_name">Kalkulator Recepturowy</string>
+    <string name="menu_name">Kalkulator w recepturze</string>
 
     <string name="drawerOpen">drawerOpen</string>
     <string name="drawerClose">drawerClose</string>
+    <string name="witamina_a">Witamina A</string>
+    <string name="witamina_e">witamina E</string>
+    <string name="witamina_a_plus_d3">witamina A + D3</string>
+    <string name="witamina_devicap">devicap</string>
+    <string name="wybierz_producenta">Wybierz producenta</string>
+    <string name="wybierz_jednostke">Wybierz jednostke</string>
+    <string name="podaj_warto_w">Podaj wartość</string>
 </resources>

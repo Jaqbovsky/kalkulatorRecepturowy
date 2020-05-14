@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -14,19 +16,22 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class vitaminSelectActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    //Navigation
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
 
+    //Buttons
+    Button vitaminA_btn, vitamine_E_btn, vitaminA_plus_D3_btn, vitaminDevicap_btn;
 
     @SuppressLint("RestrictedApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_vitamin_select);
 
         //-----------------------------Navigation---------------------------\\
         drawerLayout = findViewById(R.id.drawer);
@@ -41,7 +46,42 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         //navigationView.setNavigationItemSelectedListener(this);
         navigationView.setNavigationItemSelectedListener(this);
 
+        //-------------------------------Buttons-----------------------------\\
+        vitaminA_btn = findViewById(R.id.button_vit_A);
+        vitamine_E_btn = findViewById(R.id.button_vit_E);
+        vitaminA_plus_D3_btn = findViewById(R.id.button_vit_A_plus_D3);
+        vitaminDevicap_btn = findViewById(R.id.button_devicap);
 
+        vitaminA_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(vitaminSelectActivity.this, vitaminAActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        vitamine_E_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        vitaminA_plus_D3_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        vitaminDevicap_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     @Override
@@ -50,26 +90,25 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         switch (menuItem.getItemId()) {
 
             case R.id.menu_homePage:
-                Toast.makeText(HomeActivity.this, "Strona główna", Toast.LENGTH_SHORT).show();
+                Toast.makeText(vitaminSelectActivity.this, "Strona główna", Toast.LENGTH_SHORT).show();
                 moveHomeActivity();
                 break;
 
             case R.id.menu_vitamin:
-                Toast.makeText(HomeActivity.this, "Wybór witaminy", Toast.LENGTH_SHORT).show();
+                Toast.makeText(vitaminSelectActivity.this, "Wybór witaminy", Toast.LENGTH_SHORT).show();
                 moveToVitamin();
                 break;
         }
         return false;
     }
 
-
     public void moveHomeActivity(){
-        Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
+        Intent intent = new Intent(vitaminSelectActivity.this, HomeActivity.class);
         startActivity(intent);
     }
 
     public void moveToVitamin(){
-        Intent intent = new Intent(HomeActivity.this, vitaminSelectActivity.class);
+        Intent intent = new Intent(vitaminSelectActivity.this, vitaminSelectActivity.class);
         startActivity(intent);
     }
 }
