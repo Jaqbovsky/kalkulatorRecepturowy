@@ -3,7 +3,6 @@ package com.jakubolszewski.kalkulatorrecepturowy;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,26 +12,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.google.android.material.navigation.NavigationView;
-
-public class vitaminAActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener {
-
-    //-----------------------------Navigation---------------------------\\
-    DrawerLayout drawerLayout;
-    Toolbar toolbar;
-    NavigationView navigationView;
-    ActionBarDrawerToggle toggle;
+public class vitaminAActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     //-----------------------------numeric-variables---------------------------\\
-    int amount, density, companyChoice, unitChoice;
+    int amount, companyChoice, unitChoice;
 
-    double volume, drops, massUnit;
+    double volumeHasco, dropsHasco, massUnitHasco, gramsHasco;
+    double volumeMedana, dropsMedana, massUnitMedana, gramsMedana;
     //-----------------------------text-variables---------------------------\\
     String Company, Unit, Hasco, Medana, Fargon, gram, jm;
 
@@ -40,7 +28,7 @@ public class vitaminAActivity extends AppCompatActivity implements NavigationVie
     EditText amount_ET;
     Button calc_btn;
     Spinner spinnerCompany, spinnerUnit;
-    TextView calculation1_TV, calculation2_TV, calculation3_TV;
+    TextView calculation1_TV, calculation2_TV, calculation3_TV, calculation4_TV;
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -50,19 +38,6 @@ public class vitaminAActivity extends AppCompatActivity implements NavigationVie
 
         spinnerCompany = findViewById(R.id.spinner_Company);
         spinnerUnit = findViewById(R.id.spinner_unit);
-
-        //-----------------------------Navigation---------------------------\\
-        drawerLayout = findViewById(R.id.drawer);
-        toolbar = findViewById(R.id.toolbar);
-        navigationView = findViewById(R.id.navigationView);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawerOpen, R.string.drawerClose);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-        //navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setNavigationItemSelectedListener(this);
 
         //-----------------------------text-variables---------------------------\\
         Hasco = "Vitaminimum A Hasco 45000 j/ml";
@@ -75,6 +50,7 @@ public class vitaminAActivity extends AppCompatActivity implements NavigationVie
         calculation1_TV = findViewById(R.id.textView_calculation1);
         calculation2_TV = findViewById(R.id.textView_calculation2);
         calculation3_TV = findViewById(R.id.textView_calculation3);
+        calculation4_TV = findViewById(R.id.textView_calculation4);
 
         //-----------------------------Spinner---------------------------\\
         spinnerCompany = findViewById(R.id.spinner_Company);
@@ -115,31 +91,71 @@ public class vitaminAActivity extends AppCompatActivity implements NavigationVie
                 if (companyChoice == 1) {
 
 
-                    String test = String.valueOf(volume);
+                    String test = String.valueOf(volumeHasco);
 
                     Toast.makeText(vitaminAActivity.this, test, Toast.LENGTH_SHORT).show();
                     //-----------------------------GRAM---------------------------\\
                     if (unitChoice == 1) {
-                        volume = amount / 1.148;
-                        drops = volume * 28;
-                        massUnit = volume * 45000;
+                        gramsHasco = amount;
 
-                        volume *= 100;
-                        volume = Math.round(volume);
-                        volume /= 100;
-
-                        drops *= 100;
-                        drops = Math.round(drops);
-                        drops /= 100;
-
-                        massUnit = Math.round(massUnit);
+                        volumeHasco = gramsHasco / 1.148;
+                        dropsHasco = volumeHasco * 28;
+                        massUnitHasco = volumeHasco * 45000;
 
 
-                        calculation1_TV.setText(volume + "ml");
-                        calculation2_TV.setText(drops + " kropli");
-                        calculation3_TV.setText(massUnit + " j.m.");
+                        volumeHasco *= 100;
+                        volumeHasco = Math.round(volumeHasco);
+                        volumeHasco /= 100;
+
+                        dropsHasco = Math.round(dropsHasco);
+                        String drops_String = String.valueOf(dropsHasco);
+                        drops_String = drops_String.replace(".0", "");
+
+
+
+                        massUnitHasco = Math.round(massUnitHasco);
+                        String massUnit_String = String.valueOf(massUnitHasco).replace(".0", "");
+
+
+                        calculation1_TV.setText(volumeHasco + "ml");
+                        calculation2_TV.setText(drops_String + " kropli");
+                        calculation3_TV.setText(massUnit_String + " j.m.");
+                        calculation4_TV.setText(gramsHasco + "g");
+                        
                     }
                     //-----------------------------J.M.---------------------------\\
+
+                    if (unitChoice == 2){
+                        massUnitHasco = amount;
+
+                        volumeHasco = massUnitHasco / 45000;
+                        dropsHasco = volumeHasco * 28;
+                        gramsHasco = volumeHasco * 1.148;
+
+                        volumeHasco *= 100;
+                        volumeHasco = Math.round(volumeHasco);
+                        volumeHasco /= 100;
+
+                        dropsHasco = Math.round(dropsHasco);
+                        String drops_String = String.valueOf(dropsHasco).replace(".0", "");
+
+                        massUnitHasco = Math.round(massUnitHasco);
+                        String massUnit_String = String.valueOf(massUnitHasco).replace(".0", "");
+
+                        gramsHasco *= 100;
+                        gramsHasco = Math.round(gramsHasco);
+                        gramsHasco /= 100;
+
+                        calculation1_TV.setText(volumeHasco + "ml");
+                        calculation2_TV.setText(drops_String + " kropli");
+                        calculation3_TV.setText(massUnit_String + " j.m.");
+                        calculation4_TV.setText(gramsHasco + "g");
+
+                    }
+                    //-----------------------------A-Hasco-na-A-Medana---------------------------\\
+                    volumeMedana = massUnitHasco/50000;
+                    dropsMedana = volumeMedana * 30;
+                    gramsMedana = volumeMedana * 1.08;
 
 
                 }
@@ -156,35 +172,6 @@ public class vitaminAActivity extends AppCompatActivity implements NavigationVie
 
         });
     }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-        switch (menuItem.getItemId()) {
-
-            case R.id.menu_homePage:
-                Toast.makeText(vitaminAActivity.this, "Strona główna", Toast.LENGTH_SHORT).show();
-                moveHomeActivity();
-                break;
-
-            case R.id.menu_vitamin:
-                Toast.makeText(vitaminAActivity.this, "Wybór witaminy", Toast.LENGTH_SHORT).show();
-                moveToVitamin();
-                break;
-        }
-        return false;
-    }
-
-    public void moveHomeActivity() {
-        Intent intent = new Intent(vitaminAActivity.this, HomeActivity.class);
-        startActivity(intent);
-    }
-
-    public void moveToVitamin() {
-        Intent intent = new Intent(vitaminAActivity.this, vitaminSelectActivity.class);
-        startActivity(intent);
-    }
-
 
     //SPINNER
     @Override
@@ -232,5 +219,10 @@ public class vitaminAActivity extends AppCompatActivity implements NavigationVie
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
+    }
+
+    public void goBack(View view) {
+        Intent intent = new Intent(vitaminAActivity.this, HomeActivity.class);
+        startActivity(intent);
     }
 }

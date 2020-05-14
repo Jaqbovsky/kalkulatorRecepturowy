@@ -1,26 +1,41 @@
 package com.jakubolszewski.kalkulatorrecepturowy;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.widget.Toast;
+import android.widget.GridView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.google.android.material.navigation.NavigationView;
+public class HomeActivity extends AppCompatActivity{
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+    GridView gridView;
 
-    DrawerLayout drawerLayout;
-    Toolbar toolbar;
-    NavigationView navigationView;
-    ActionBarDrawerToggle toggle;
+    String[] values = {
+            "Witamina A",
+            "Witamina E",
+            "Witamina A + D3",
+            "Devicap",
+            "Spirytus",
+            "Olejki",
+            "TEST"
+    };
 
+    int[] images = {
+        R.drawable.ic_home,
+        R.drawable.ic_eyedropper,
+        R.drawable.ic_milk,
+        R.drawable.ic_milk,
+        R.drawable.ic_milk,
+        R.drawable.ic_pharmacy,
+        R.drawable.ic_milk
+    };
+
+    String[] activity = {
+        "vitaminAActivity",
+        "vitaminEActivity",
+        "vitaminAplusD3Activity",
+        "vitaminDevicapActivity"
+    };
 
     @SuppressLint("RestrictedApi")
     @Override
@@ -28,48 +43,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        //-----------------------------Navigation---------------------------\\
-        drawerLayout = findViewById(R.id.drawer);
-        toolbar = findViewById(R.id.toolbar);
-        navigationView = findViewById(R.id.navigationView);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawerOpen, R.string.drawerClose);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-        //navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setNavigationItemSelectedListener(this);
+        gridView = (GridView) findViewById(R.id.gridView);
+
+        GridAdapter gridAdapter = new GridAdapter(this, values, images);
+
+        gridView.setAdapter(gridAdapter);
+
 
 
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
-        switch (menuItem.getItemId()) {
-
-            case R.id.menu_homePage:
-                Toast.makeText(HomeActivity.this, "Strona główna", Toast.LENGTH_SHORT).show();
-                moveHomeActivity();
-                break;
-
-            case R.id.menu_vitamin:
-                Toast.makeText(HomeActivity.this, "Wybór witaminy", Toast.LENGTH_SHORT).show();
-                moveToVitamin();
-                break;
-        }
-        return false;
-    }
-
-
-    public void moveHomeActivity(){
-        Intent intent = new Intent(HomeActivity.this, HomeActivity.class);
-        startActivity(intent);
-    }
-
-    public void moveToVitamin(){
-        Intent intent = new Intent(HomeActivity.this, vitaminSelectActivity.class);
-        startActivity(intent);
-    }
 }
