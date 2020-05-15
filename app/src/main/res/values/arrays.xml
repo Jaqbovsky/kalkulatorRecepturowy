@@ -3,16 +3,16 @@
     <string-array name="companySpinner_vit_A">
 
         <item>Wybierz</item>
-        <item>Vitaminum A Hasco 45000 j/ml</item>
-        <item>Vitaminum A Medana 50000 j/ml</item>
+        <item>Vitaminum A Hasco 45000 j.m./ml</item>
+        <item>Vitaminum A Medana 50000 j.m./ml</item>
         <item>Vitaminum A Fagron</item>
 
     </string-array>
     <string-array name="unitSpinner">
 
         <item>Wybierz</item>
-        <item>Vit A liq (g)</item>
-        <item>VIT A (j.m.)</item>
+        <item>Vit. A liq (g)</item>
+        <item>Vit. A (j.m.)</item>
 
     </string-array>
 

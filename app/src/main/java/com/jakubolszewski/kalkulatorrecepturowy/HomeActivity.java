@@ -17,17 +17,15 @@ public class HomeActivity extends AppCompatActivity{
             "Devicap",
             "Spirytus",
             "Olejki",
-            "TEST"
     };
 
     int[] images = {
-        R.drawable.ic_home,
-        R.drawable.ic_eyedropper,
+        R.drawable.ic_vit_a,
+        R.drawable.ic_vit_e,
         R.drawable.ic_milk,
         R.drawable.ic_milk,
         R.drawable.ic_milk,
         R.drawable.ic_pharmacy,
-        R.drawable.ic_milk
     };
 
     String[] activity = {

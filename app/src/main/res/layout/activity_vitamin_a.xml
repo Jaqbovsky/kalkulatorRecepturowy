@@ -135,8 +135,8 @@
                 android:id="@+id/textView_enetr_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
-                android:layout_marginLeft="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
                 android:text="@string/podaj_warto_w"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/editText_amount"
@@ -145,11 +145,13 @@
 
             <EditText
                 android:id="@+id/editText_amount"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
                 android:autofillHints=""
                 android:ems="10"
                 android:inputType="numberDecimal"
@@ -436,20 +438,6 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView_title10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/obj_to_ml"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <TextView
                             android:id="@+id/textView_title11"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -493,7 +481,7 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView_mainVitEmpty"
+                            android:id="@+id/textView_mainVit2"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -685,20 +673,6 @@
 
                         <TextView
                             android:id="@+id/textView_calculation9"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:layout_marginEnd="35dp" />
-
-                        <TextView
-                            android:id="@+id/textView_calculation10"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"

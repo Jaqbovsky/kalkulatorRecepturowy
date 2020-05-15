@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">Kalkulator Recepturowy</string>
-    <string name="kalkulator_recepturowy">Kalkulator Recepturowy</string>
+    <string name="app_name">Kalkulator w recepturze</string>
     <string name="menu_name">Kalkulator w recepturze</string>
 
 
@@ -11,17 +10,17 @@
 
     <string name="wybierz_producenta">Wybierz producenta</string>
     <string name="wybierz_jednostke">Wybierz jednostke</string>
-    <string name="podaj_warto_w">Podaj wartość</string>
+    <string name="podaj_warto_w">Ilość przepisana na recepcie</string>
     <string name="oblicz">Oblicz</string>
     <string name="masa_g">Masa (g)</string>
     <string name="obj_to_ml">Objętość (ml)</string>
     <string name="todo">TODO</string>
     <string name="vitaminum_a">Vitaminum A</string>
-    <string name="mo_esz_te_u_y_innych">Możesz też użyć innych</string>
-    <string name="jednostek_masy_j_m">Jednostek masy (j.m.)</string>
+    <string name="mo_esz_te_u_y_innych">Możesz też użyć innych  </string>
+    <string name="jednostek_masy_j_m">Jednostki masy (j.m.)</string>
     <string name="ilosc_ktopli">Ilość kropli</string>
     <string name="wczytywanie">wczytywanie</string>
-    <string name="dostepnych_witamin">dostępnych witamin</string>
+    <string name="dostepnych_witamin"> dostępnych witamin</string>
 
 
 </resources>

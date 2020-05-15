@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class vitaminAActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -22,6 +23,7 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
 
     double volumeHasco, dropsHasco, massUnitHasco, gramsHasco;
     double volumeMedana, dropsMedana, massUnitMedana, gramsMedana;
+    double volumeFagron, dropsFagron, massUnitFagron, gramsFagron;
     //-----------------------------text-variables---------------------------\\
     String Company, Unit, Hasco, Medana, Fargon, gram, jm;
 
@@ -31,9 +33,12 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
     Spinner spinnerCompany, spinnerUnit;
     TextView calculation1_TV, calculation2_TV, calculation3_TV, calculation4_TV;
     TextView calculation5_TV, calculation6_TV, calculation7_TV, calculation8_TV;
-    TextView calculation9_TV, calculation10_TV, calculation11_TV, calculation12_TV;
-    TextView textView_text1, textView_text2 , textView_text3, textView_text4, textView_text5, textView_text6;
-    TextView textView_vitMain;
+    TextView calculation9_TV, calculation11_TV, calculation12_TV;
+    TextView textView_text1, textView_text2, textView_text3, textView_text4, textView_text5, textView_text6;
+    TextView textView_vitMain, textView_vitMain2;
+    TextView title1_TV, title2_TV, title3_TV, title4_TV;
+    TextView title5_TV, title6_TV, title7_TV, title8_TV;
+    TextView title9_TV, title11_TV, title12_TV;
     LinearLayout linearLayout1, linearLayout2;
 
     @SuppressLint("RestrictedApi")
@@ -62,7 +67,6 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
         calculation7_TV = findViewById(R.id.textView_calculation7);
         calculation8_TV = findViewById(R.id.textView_calculation8);
         calculation9_TV = findViewById(R.id.textView_calculation9);
-        calculation10_TV = findViewById(R.id.textView_calculation10);
         calculation11_TV = findViewById(R.id.textView_calculation11);
         calculation12_TV = findViewById(R.id.textView_calculation12);
 
@@ -74,8 +78,19 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
         textView_text6 = findViewById(R.id.textView_text6);
 
         textView_vitMain = findViewById(R.id.textView_mainVit);
+        textView_vitMain2 = findViewById(R.id.textView_mainVit2);
 
-
+        title1_TV = findViewById(R.id.textView_title1);
+        title2_TV = findViewById(R.id.textView_title2);
+        title3_TV = findViewById(R.id.textView_title3);
+        title4_TV = findViewById(R.id.textView_title4);
+        title5_TV = findViewById(R.id.textView_title5);
+        title6_TV = findViewById(R.id.textView_title6);
+        title7_TV = findViewById(R.id.textView_title7);
+        title8_TV = findViewById(R.id.textView_title8);
+        title9_TV = findViewById(R.id.textView_title9);
+        title11_TV = findViewById(R.id.textView_title11);
+        title12_TV = findViewById(R.id.textView_title12);
 
         //-----------------------------Spinner---------------------------\\
         spinnerCompany = findViewById(R.id.spinner_Company);
@@ -124,13 +139,14 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                 //-----------------------------HASCO---------------------------\\
                 if (companyChoice == 1) {
 
-                    textView_vitMain.setText("Vit A Hasco");
-                    textView_text3.setText("Vit A Medana");
-                    textView_text5.setText("Vit A Fargon");
+                    textView_vitMain.setText("Vit. A Hasco");
+                    textView_text3.setText("Vit. A Medana");
+                    textView_text5.setText("Vit. A Fagron (Roztwór ");
+                    textView_text6.setText("pomocniczy)");
 
                     String test = String.valueOf(volumeHasco);
 
-                    Toast.makeText(vitaminAActivity.this, test, Toast.LENGTH_SHORT).show();
+
                     //-----------------------------GRAM---------------------------\\
                     if (unitChoice == 1) {
                         gramsHasco = amount;
@@ -155,11 +171,11 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                         calculation2_TV.setText(drops_String + " kropli");
                         calculation3_TV.setText(massUnit_String + " j.m.");
                         calculation4_TV.setText(gramsHasco + "g");
-                        
+
                     }
                     //-----------------------------J.M.---------------------------\\
 
-                    if (unitChoice == 2){
+                    if (unitChoice == 2) {
                         massUnitHasco = amount;
 
                         volumeHasco = massUnitHasco / 45000;
@@ -190,7 +206,7 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                     //-----------------------------A-Hasco-na-A-Medana---------------------------\\
                     massUnitMedana = massUnitHasco;
 
-                    volumeMedana = massUnitHasco/50000;
+                    volumeMedana = massUnitHasco / 50000;
 
                     volumeMedana *= 100;
                     volumeMedana = Math.round(volumeMedana);
@@ -213,16 +229,178 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                     calculation6_TV.setText(volumeMedana + " ml");
                     calculation7_TV.setText(drops_String + " kropli");
                     calculation8_TV.setText(massUnit_String + " j.m.");
-                    textView_text3.setText("Vit A Medana");
+                    textView_text3.setText("Vit. A Medana");
+
+                    //-----------------------------A-Hasco-na-A-Fagron---------------------------\\
+
+                    massUnitFagron = massUnitHasco;
+
+                    dropsFagron = massUnitFagron / 10000;
+                    gramsFagron = dropsFagron * 0.034;
+                    volumeFagron = 0; //nie znamy gęstości. Brak mililitrów.
+
+                    dropsFagron = Math.round(dropsFagron);
+
+                    gramsFagron *= 100;
+                    gramsFagron = Math.round(gramsFagron);
+                    gramsFagron /= 100;
+
+                    String dropsFagron_String = String.valueOf(dropsFagron).replace(".0", "");
+                    String massUnitFagron_String = String.valueOf(massUnitFagron).replace(".0", "");
+
+                    calculation9_TV.setText(gramsFagron + " g");
+                    calculation11_TV.setText(dropsFagron_String + " kropli");
+                    calculation12_TV.setText(massUnitFagron_String + " j.m.");
+
 
                 }
                 //-----------------------------MEDANA---------------------------\\
                 if (companyChoice == 2) {
+                    textView_vitMain.setText("Vit. A Medana");
+                    textView_text3.setText("Vit. A Hasco");
+                    textView_text5.setText("Vit. A Fagron ");
+                    textView_text6.setText("(Roztwór pomocniczy)");
+
+
+                    //-----------------------------GRAM---------------------------\\
+                    if (unitChoice == 1) {
+
+                        gramsMedana = amount;
+
+                        volumeMedana = gramsMedana / 1.08;
+
+                        volumeMedana *= 100;
+                        volumeMedana = Math.round(volumeMedana);
+                        volumeMedana /= 100;
+
+                        dropsMedana = volumeMedana * 30;
+
+                        massUnitMedana = volumeMedana * 50000;
+
+                        dropsMedana = Math.round(dropsMedana);
+                        massUnitMedana = Math.round(massUnitMedana);
+
+                        String drops_String = String.valueOf(dropsMedana).replace(".0", "");
+                        String massUnit_String = String.valueOf(massUnitMedana).replace(".0", "");
+
+                        calculation4_TV.setText(gramsMedana + " g");
+                        calculation1_TV.setText(volumeMedana + " ml");
+                        calculation2_TV.setText(drops_String + " kropli");
+                        calculation3_TV.setText(massUnit_String + " j.m.");
+
+                    }
+
+                    //-----------------------------J.M.---------------------------\\
+                    if (unitChoice == 2) {
+
+                        massUnitMedana = amount;
+
+                        volumeMedana = massUnitMedana / 50000;
+
+                        volumeMedana *= 100;
+                        volumeMedana = Math.round(volumeMedana);
+                        volumeMedana /= 100;
+
+                        gramsMedana = volumeMedana * 1.08;
+                        dropsMedana = volumeMedana * 30;
+
+                        gramsMedana *= 100;
+                        gramsMedana = Math.round(gramsMedana);
+                        gramsMedana /= 100;
+
+                        dropsMedana = Math.round(dropsMedana);
+                        massUnitMedana = Math.round(massUnitMedana);
+
+                        String drops_String = String.valueOf(dropsMedana).replace(".0", "");
+                        String massUnit_String = String.valueOf(massUnitMedana).replace(".0", "");
+
+                        calculation4_TV.setText(gramsMedana + " g");
+                        calculation1_TV.setText(volumeMedana + " ml");
+                        calculation2_TV.setText(drops_String + " kropli");
+                        calculation3_TV.setText(massUnit_String + " j.m.");
+                    }
+
+                    //-----------------------------A-Medana-na-A-Hasco---------------------------\\
+
+                    massUnitHasco = massUnitMedana;
+
+                    volumeHasco = massUnitHasco / 45000;
+
+                    volumeHasco *= 100;
+                    volumeHasco = Math.round(volumeHasco);
+                    volumeHasco /= 100;
+
+                    gramsHasco = volumeHasco * 1.148;
+                    dropsHasco = volumeHasco * 28;
+
+                    gramsHasco *= 100;
+                    gramsHasco = Math.round(gramsHasco);
+                    gramsHasco /= 100;
+
+                    dropsHasco = Math.round(dropsHasco);
+
+                    String dropsHasco_String = String.valueOf(dropsHasco).replace(".0", "");
+                    String massUnitHasco_String = String.valueOf(massUnitHasco).replace(".0", "");
+
+                    calculation5_TV.setText(gramsHasco + " g");
+                    calculation6_TV.setText(volumeHasco + " ml");
+                    calculation7_TV.setText(dropsHasco_String + " kropli");
+                    calculation8_TV.setText(massUnitHasco_String + " j.m.");
+
+                    //-----------------------------A-Medana-na-A-Fagron---------------------------\\
+                    massUnitFagron = massUnitMedana;
+
+                    dropsFagron = massUnitFagron / 10000;
+                    gramsFagron = dropsFagron * 0.034;
+                    volumeFagron = 0; //nie znamy gęstości. Brak mililitrów.
+
+                    dropsFagron = Math.round(dropsFagron);
+
+                    gramsFagron *= 100;
+                    gramsFagron = Math.round(gramsFagron);
+                    gramsFagron /= 100;
+
+                    String dropsFagron_String = String.valueOf(dropsFagron).replace(".0", "");
+                    String massUnitFagron_String = String.valueOf(massUnitFagron).replace(".0", "");
+
+                    calculation9_TV.setText(gramsFagron + " g");
+                    calculation11_TV.setText(dropsFagron_String + " kropli");
+                    calculation12_TV.setText(massUnitFagron_String + " j.m.");
 
                 }
 
                 //-----------------------------FARGON---------------------------\\
                 if (companyChoice == 3) {
+                    textView_vitMain.setText("Vit. A Fagron");
+                    textView_vitMain2.setText("(roztwór pomocniczy)");
+                    if (unitChoice == 1) {
+
+                        new AlertDialog.Builder(vitaminAActivity.this)
+                                .setTitle("Błąd")
+                                .setMessage("Zmień na jednostki masy (j.m.)")
+                                .show();
+
+                    }
+
+                    if (unitChoice == 2) {
+
+                        massUnitFagron = amount;
+
+                        dropsFagron = massUnitFagron / 10000;
+                        gramsFagron = dropsFagron * 0.034;
+
+                        gramsFagron *= 100;
+                        gramsFagron = Math.round(gramsFagron);
+                        gramsFagron /= 100;
+
+                        dropsFagron = Math.round(dropsFagron);
+                        String dropsFagron_String = String.valueOf(dropsFagron).replace(".0", "");
+
+                        calculation4_TV.setText(gramsFagron + " g");
+                        calculation2_TV.setText(dropsFagron_String + " kropli");
+                        calculation3_TV.setText(massUnitFagron + " j.m.");
+
+                    }
 
                 }
             }
