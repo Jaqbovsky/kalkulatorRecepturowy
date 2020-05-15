@@ -137,8 +137,6 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
 
                         volumeHasco = gramsHasco / 1.148;
 
-
-
                         volumeHasco *= 100;
                         volumeHasco = Math.round(volumeHasco);
                         volumeHasco /= 100;
@@ -240,7 +238,6 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
 
         Spinner spinnerCompany = (Spinner) parent;
         Spinner spinnerUnit = (Spinner) parent;
-
 
         if (spinnerCompany.getId() == R.id.spinner_Company) {
             Company = parent.getItemAtPosition(position).toString();
