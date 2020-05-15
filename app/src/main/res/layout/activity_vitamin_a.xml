@@ -2,10 +2,10 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".vitaminAActivity"
-    android:id="@+id/drawer"
     tools:openDrawer="start">
 
     <RelativeLayout
@@ -28,13 +28,13 @@
                     android:id="@+id/imageView_arrow"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
+                    android:onClick="goBack"
                     android:src="@drawable/ic_arrow_white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/textView2"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:onClick="goBack"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -210,8 +210,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
 
                     <LinearLayout
@@ -219,13 +218,33 @@
                         android:layout_height="wrap_content"
                         android:background="#7798CC"
                         android:orientation="vertical"
-                        android:paddingLeft="30dp">
+                        android:id="@+id/linearLayout1">
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:background="@color/colorWhite" />
+                        <TextView
+                            android:id="@+id/textView_mainVit"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0"
+                            android:background="@color/colorWhite"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/colorPharmacy"
+                            android:textSize="16sp" />
 
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:background="@color/colorWhite" />
                         <TextView
                             android:id="@+id/textView_title4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="0"
@@ -238,6 +257,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="0"
@@ -250,6 +270,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="10dp"
                             android:text="Ilość kropli"
@@ -262,9 +283,172 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
                             android:layout_marginTop="10dp"
                             android:layout_marginBottom="15dp"
-                            android:text="Jednostek masy (j.m,)"
+                            android:text="Jednostek masy (j.m.)    "
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:background="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/textView_text1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:background="@color/colorWhite"
+                            android:gravity="end"
+                            android:text="Możesz też użyć innych "
+                            android:textColor="@color/colorPharmacy"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="10dp"
+                            android:background="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/textView_text3"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0"
+                            android:background="@color/colorWhite"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/colorPharmacy"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="10dp"
+                            android:background="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/textView_title5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="Masa (g)"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_title6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="Objętość (ml)"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_title7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Ilość kropli"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/textView_title8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="Jednostek masy (j.m.)    "
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:background="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/textView_text5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0"
+                            android:background="@color/colorWhite"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/colorPharmacy"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:background="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/textView_title9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="Masa (g)"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_title10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="Objętość (ml)"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_title11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Ilość kropli"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+
+                        <TextView
+                            android:id="@+id/textView_title12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="Jednostek masy (j.m.)    "
                             android:textColor="#FFFFFF"
                             android:textSize="16sp" />
 
@@ -276,7 +460,27 @@
                         android:layout_gravity="end"
                         android:background="#7798CC"
                         android:orientation="vertical"
-                        android:paddingRight="35dp">
+                        android:id="@+id/linearLayout2">
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:background="@color/colorWhite" />
+                        <TextView
+                            android:id="@+id/textView_mainVitEmpty"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0"
+                            android:background="@color/colorWhite"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@color/colorPharmacy"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:background="@color/colorWhite" />
 
                         <TextView
                             android:id="@+id/textView_calculation4"
@@ -284,6 +488,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="0"
                             android:text="Wczytywanie"
@@ -296,6 +501,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
                             android:layout_marginBottom="10dp"
                             android:layout_weight="0"
                             android:text="Wczytywanie"
@@ -307,11 +513,12 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="10dp"
                             android:text="Wczytywanie"
                             android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginTop="10dp"/>
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/textView_calculation3"
@@ -319,27 +526,173 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
                             android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
                             android:layout_marginBottom="15dp"
                             android:text="Wczytywanie"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp" />
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="119dp"
-                        android:layout_height="fill_parent"
-                        android:layout_gravity="end"
-                        android:background="#7798CC"
-                        android:orientation="vertical"
-                        android:paddingRight="35dp">
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:background="@color/colorWhite" />
 
                         <TextView
+                            android:id="@+id/textView_text2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_weight="0"
+                            android:background="@color/colorWhite"
+                            android:text="dostępnych witamin"
+                            android:textColor="@color/colorPharmacy"
+                            android:textSize="16sp"
+
+                            />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="10dp"
+                            android:background="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/textView_text4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0"
+                            android:background="@color/colorWhite"
+                            android:text=""
+                            android:textColor="@color/colorPharmacy"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="10dp"
+                            android:background="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/textView_calculation5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="sdbnm"
-                            android:textSize="123dp"/>
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="Wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_calculation6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="Wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_calculation7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_calculation8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="Wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:background="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/textView_text6"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="0"
+                            android:background="@color/colorWhite"
+                            android:text=""
+                            android:textColor="@color/colorPharmacy"
+                            android:textSize="16sp" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:background="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/textView_calculation9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="Wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_calculation10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="Wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_calculation11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/textView_calculation12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="15dp"
+                            android:text="Wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
                     </LinearLayout>
+
 
                 </LinearLayout>
             </ScrollView>
@@ -347,7 +700,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </RelativeLayout>
-
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
