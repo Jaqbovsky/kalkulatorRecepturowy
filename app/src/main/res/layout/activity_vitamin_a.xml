@@ -438,6 +438,20 @@
                             android:textSize="16sp" />
 
                         <TextView
+                            android:id="@+id/textView_title10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="@string/obj_to_ml"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
                             android:id="@+id/textView_title11"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -568,8 +582,8 @@
                             android:text="@string/dostepnych_witamin"
                             android:textColor="@color/colorPharmacy"
                             android:textSize="16sp"
-
-                            />
+                            android:paddingLeft="5dp"
+                            android:paddingStart="5dp" />
 
                         <ImageView
                             android:layout_width="fill_parent"
@@ -673,6 +687,19 @@
 
                         <TextView
                             android:id="@+id/textView_calculation9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="@string/wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="35dp" />
+                        <TextView
+                            android:id="@+id/textView_calculation10"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="end"
