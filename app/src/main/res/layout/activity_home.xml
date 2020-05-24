@@ -39,19 +39,27 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+
+</ScrollView>
+
     <GridView
         android:id="@+id/gridView"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="60dp"
+        android:layout_marginBottom="30dp"
         android:layout_marginRight="20dp"
         android:columnWidth="200dp"
         android:horizontalSpacing="20dp"
         android:numColumns="2"
         android:paddingTop="20dp"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp" />
+        android:verticalSpacing="10dp"
+        android:scrollbars="none"
+        />
 
 </RelativeLayout>

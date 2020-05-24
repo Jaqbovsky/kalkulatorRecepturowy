@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".vitaminAActivity"></activity>
+        <activity android:name=".feedbackActivity"></activity>
+        <activity android:name=".oils.olejeActivity" />
+        <activity android:name=".alcoholActivity" />
+        <activity android:name=".vitamins.vitaminDevicapActivity" />
+        <activity android:name=".InfoActivity" />
+        <activity android:name=".vitamins.vitaminAplusD3Activity" />
+        <activity android:name=".oils.olejkiActivity" />
+        <activity android:name=".vitamins.vitaminEActivity" />
+        <activity android:name=".vitamins.vitaminAActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

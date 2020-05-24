@@ -10,7 +10,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.jakubolszewski.kalkulatorrecepturowy.oils.olejeActivity;
+import com.jakubolszewski.kalkulatorrecepturowy.oils.olejkiActivity;
+import com.jakubolszewski.kalkulatorrecepturowy.vitamins.vitaminAActivity;
+import com.jakubolszewski.kalkulatorrecepturowy.vitamins.vitaminAplusD3Activity;
+import com.jakubolszewski.kalkulatorrecepturowy.vitamins.vitaminDevicapActivity;
+import com.jakubolszewski.kalkulatorrecepturowy.vitamins.vitaminEActivity;
 
 public class GridAdapter extends BaseAdapter {
 
@@ -67,25 +73,38 @@ public class GridAdapter extends BaseAdapter {
                     //Toast.makeText(context, values[position], Toast.LENGTH_SHORT).show();
 
                     if (values[position].equals("Witamina A")){
-                        Toast.makeText(context, values[position], Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(context, vitaminAActivity.class);
                         context.startActivity(intent);
                     }
                     if (values[position].equals("Witamina E")){
-                        Toast.makeText(context, values[position], Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, vitaminEActivity.class);
+                        context.startActivity(intent);
                     }
                     if (values[position].equals("Witamina A + D3")){
-                        Toast.makeText(context, values[position], Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, vitaminAplusD3Activity.class);
+                        context.startActivity(intent);
                     }
                     if (values[position].equals("Devicap")){
-                        Toast.makeText(context, values[position], Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, vitaminDevicapActivity.class);
+                        context.startActivity(intent);
                     }
                     if (values[position].equals("Spirytus")){
-                        Toast.makeText(context, values[position], Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, alcoholActivity.class);
+                        context.startActivity(intent);
                     }
                     if (values[position].equals("Olejki")){
-                        Toast.makeText(context, values[position], Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(context, olejkiActivity.class);
+                        context.startActivity(intent);
                     }
+                    if (values[position].equals("Oleje")){
+                        Intent intent = new Intent(context, olejeActivity.class);
+                        context.startActivity(intent);
+                    }
+                    if (values[position].equals("Informacje")){
+                        Intent intent = new Intent(context,  InfoActivity.class);
+                        context.startActivity(intent);
+                    }
+
                 }
             });
             view.setBackgroundColor(Color.WHITE);

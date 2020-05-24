@@ -21,6 +21,21 @@
     <string name="ilosc_ktopli">Ilość kropli</string>
     <string name="wczytywanie">wczytywanie</string>
     <string name="dostepnych_witamin"> dostępnych witamin</string>
+    <string name="vitaminum_e">Vitaminum E</string>
+    <string name="wybierz_olejek">Wybierz olejek</string>
+    <string name="olejki">Olejki</string>
+    <string name="vit_a_plus_d3">vitaminum A +D3</string>
+    <string name="info">Informacje</string>
+    <string name="version">Aktualna wersja: 0.3</string>
+    <string name="contact">Email: j.olszewski05@gmail.com</string>
+    <string name="changelog">Ostatnio dodane</string>
+    <string name="feedback">Zgłoszenie</string>
+    <string name="imie">Imię</string>
+    <string name="email">Email</string>
+    <string name="wiadomosc">Wiadomość</string>
+    <string name="button_details">Pokaż szczegóły widomości</string>
+    <string name="button_send">Wyślij</string>
+    <string name="oleje">Oleje</string>
 
 
 </resources>

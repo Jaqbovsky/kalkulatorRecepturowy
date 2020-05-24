@@ -2,15 +2,13 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vitamins.vitaminAActivity">
+    tools:context=".vitamins.vitaminEActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -40,7 +38,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/vitaminum_a"
+                    android:text="@string/vitaminum_e"
                     android:textColor="#ffffff"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -93,43 +91,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/spinner_Company" />
 
-            <TextView
-                android:id="@+id/textView_unit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/wybierz_jednostke"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toBottomOf="@+id/spinner_unit"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/space" />
-
-            <Spinner
-                android:id="@+id/spinner_unit"
-                android:layout_width="0dp"
-                android:layout_height="27dp"
-                android:layout_marginStart="27dp"
-                android:layout_marginLeft="27dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginRight="16dp"
-                android:background="@color/spinnerColor"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/textView_unit"
-                app:layout_constraintTop_toBottomOf="@+id/space" />
-
             <Space
                 android:id="@+id/space2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinner_unit" />
+                app:layout_constraintTop_toBottomOf="@+id/space" />
 
             <TextView
                 android:id="@+id/textView_enetr_value"
@@ -249,7 +217,7 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView_title4"
+                            android:id="@+id/textView_title1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -263,7 +231,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView_title1"
+                            android:id="@+id/textView_title2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -277,7 +245,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView_title2"
+                            android:id="@+id/textView_title3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -287,27 +255,16 @@
                             android:layout_marginBottom="10dp"
                             android:text="@string/ilosc_ktopli"
                             android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            />
 
-
-                        <TextView
-                            android:id="@+id/textView_title3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="15dp"
-                            android:text="@string/jednostek_masy_j_m"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
 
                         <ImageView
-                            android:layout_width="fill_parent"
+                            android:layout_width="177dp"
                             android:layout_height="15dp"
                             android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
+                            android:contentDescription="@string/todo"
+                            android:paddingRight="100dp" />
 
                         <TextView
                             android:id="@+id/textView_text1"
@@ -318,7 +275,9 @@
                             android:gravity="end"
                             android:text="@string/mo_esz_te_u_y_innych"
                             android:textColor="@color/colorPharmacy"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+
+                           />
 
                         <ImageView
                             android:layout_width="fill_parent"
@@ -345,7 +304,7 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView_title5"
+                            android:id="@+id/textView_title4"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -359,7 +318,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView_title6"
+                            android:id="@+id/textView_title5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -373,7 +332,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView_title7"
+                            android:id="@+id/textView_title6"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -385,19 +344,6 @@
                             android:textColor="#FFFFFF"
                             android:textSize="16sp" />
 
-
-                        <TextView
-                            android:id="@+id/textView_title8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="15dp"
-                            android:text="@string/jednostek_masy_j_m"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
 
                         <ImageView
                             android:layout_width="fill_parent"
@@ -424,7 +370,7 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView_title9"
+                            android:id="@+id/textView_title7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -438,7 +384,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView_title10"
+                            android:id="@+id/textView_title8"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -452,7 +398,7 @@
                             android:textSize="16sp" />
 
                         <TextView
-                            android:id="@+id/textView_title11"
+                            android:id="@+id/textView_title9"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -464,19 +410,6 @@
                             android:textColor="#FFFFFF"
                             android:textSize="16sp" />
 
-
-                        <TextView
-                            android:id="@+id/textView_title12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="15dp"
-                            android:text="@string/jednostek_masy_j_m"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:layout_marginStart="15dp" />
 
                     </LinearLayout>
 
@@ -513,20 +446,6 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView_calculation4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <TextView
                             android:id="@+id/textView_calculation1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -549,6 +468,7 @@
                             android:layout_marginEnd="35dp"
                             android:layout_marginRight="35dp"
                             android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
                             android:text="@string/wczytywanie"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp" />
@@ -561,7 +481,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginEnd="35dp"
                             android:layout_marginRight="35dp"
-                            android:layout_marginBottom="15dp"
+                            android:layout_marginBottom="10dp"
                             android:text="@string/wczytywanie"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp" />
@@ -609,6 +529,20 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
+                            android:id="@+id/textView_calculation4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="35dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="@string/wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp" />
+
+                        <TextView
                             android:id="@+id/textView_calculation5"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -631,33 +565,6 @@
                             android:layout_marginEnd="35dp"
                             android:layout_marginRight="35dp"
                             android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textView_calculation7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textView_calculation8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="15dp"
                             android:text="@string/wczytywanie"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp" />
@@ -686,6 +593,33 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
+                            android:id="@+id/textView_calculation7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="@string/wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="35dp" />
+                        <TextView
+                            android:id="@+id/textView_calculation8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="35dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="0"
+                            android:text="@string/wczytywanie"
+                            android:textColor="#FFFFFF"
+                            android:textSize="16sp"
+                            android:layout_marginEnd="35dp" />
+
+                        <TextView
                             android:id="@+id/textView_calculation9"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -693,50 +627,11 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginRight="35dp"
                             android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:layout_marginEnd="35dp" />
-                        <TextView
-                            android:id="@+id/textView_calculation10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
                             android:text="@string/wczytywanie"
                             android:textColor="#FFFFFF"
                             android:textSize="16sp"
                             android:layout_marginEnd="35dp" />
 
-                        <TextView
-                            android:id="@+id/textView_calculation11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:layout_marginEnd="35dp" />
-
-                        <TextView
-                            android:id="@+id/textView_calculation12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="15dp"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
                     </LinearLayout>
 
 
@@ -746,6 +641,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </RelativeLayout>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

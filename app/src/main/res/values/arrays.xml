@@ -8,6 +8,7 @@
         <item>Vitaminum A Fagron</item>
 
     </string-array>
+
     <string-array name="unitSpinner">
 
         <item>Wybierz</item>
@@ -17,5 +18,49 @@
 
     </string-array>
 
+    <string-array name="companySpinner_vit_E">
 
+        <item>Wybierz</item>
+        <item>Vit. E Fagron (g)</item>
+        <item>Vit. E Medana liq (g)</item>
+        <item>Vit. E Medana liq (ml)</item>
+        <item>Vit. E Hasco liq (g)</item>
+        <item>Vit. E Hasco liq (ml)</item>
+        <item>Vit. E (g)</item>
+
+    </string-array>
+
+    <string-array name="olejki">
+
+        <item>Wybierz</item>
+        <item>Olejek miętowy</item>
+        <item>Olejek lawendowy</item>
+        <item>Olejek eukaliptusowy</item>
+
+    </string-array>
+
+    <string-array name="olejkiUnit">
+
+        <item>Wybierz</item>
+        <item>Masa (g)</item>
+        <item>Objętość (ml)</item>
+        <item>Krople</item>
+
+    </string-array>
+
+    <string-array name="oleje">
+
+        <item>Wybierz</item>
+        <item>Oleum Rape</item>
+        <item>Oleum Ricini</item>
+
+    </string-array>
+
+    <string-array name="olejeUnit">
+
+        <item>Wybierz</item>
+        <item>Masa (g)</item>
+        <item>Objętość (ml)</item>
+
+    </string-array>
 </resources>

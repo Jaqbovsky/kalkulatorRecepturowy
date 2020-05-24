@@ -1,4 +1,4 @@
-package com.jakubolszewski.kalkulatorrecepturowy;
+package com.jakubolszewski.kalkulatorrecepturowy.vitamins;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -15,6 +15,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.jakubolszewski.kalkulatorrecepturowy.HomeActivity;
+import com.jakubolszewski.kalkulatorrecepturowy.R;
 
 public class vitaminAActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 

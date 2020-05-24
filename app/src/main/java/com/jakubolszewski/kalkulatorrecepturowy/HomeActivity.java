@@ -17,23 +17,23 @@ public class HomeActivity extends AppCompatActivity{
             "Devicap",
             "Spirytus",
             "Olejki",
+            "Oleje",
+            "Informacje"
     };
 
     int[] images = {
         R.drawable.ic_vit_a,
         R.drawable.ic_vit_e,
+        R.drawable.ic_vit_a_d3,
         R.drawable.ic_milk,
         R.drawable.ic_milk,
-        R.drawable.ic_milk,
-        R.drawable.ic_pharmacy,
+        R.drawable.ic_olejki,
+        R.drawable.ic_alcohol,
+        R.drawable.ic_info_outline_black_24dp,
+
     };
 
-    String[] activity = {
-        "vitaminAActivity",
-        "vitaminEActivity",
-        "vitaminAplusD3Activity",
-        "vitaminDevicapActivity"
-    };
+
 
     @SuppressLint("RestrictedApi")
     @Override
