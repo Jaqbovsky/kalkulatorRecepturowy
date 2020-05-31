@@ -60,7 +60,7 @@ public class GridAdapter extends BaseAdapter {
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        if(convertView == null){
+
             view = new View(context);
             view = layoutInflater.inflate(R.layout.single_item, null);
             ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
@@ -108,7 +108,7 @@ public class GridAdapter extends BaseAdapter {
                 }
             });
             view.setBackgroundColor(Color.WHITE);
-        }
+
 
         return view;
     }

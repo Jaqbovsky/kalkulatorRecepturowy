@@ -59,8 +59,8 @@
                 android:id="@+id/spinner_Company"
                 android:layout_width="0dp"
                 android:layout_height="27dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginLeft="16dp"
+                android:layout_marginStart="66dp"
+                android:layout_marginLeft="66dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
@@ -76,7 +76,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
-                android:text="@string/wybierz_producenta"
+                android:text="@string/wybierz_olej"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@+id/spinner_Company"
                 app:layout_constraintStart_toStartOf="parent"
@@ -168,19 +168,59 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText_amount" />
 
+            <TextView
+                android:id="@+id/textView_enetr_density"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:text="@string/podaj_gestosc"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/editText_density"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/space3" />
+
+            <EditText
+                android:id="@+id/editText_density"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:inputType="numberDecimal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.38"
+                app:layout_constraintStart_toEndOf="@+id/textView_enetr_value"
+                app:layout_constraintTop_toBottomOf="@+id/space3"
+                tools:ignore="LabelFor" />
+
+            <Space
+                android:id="@+id/space4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editText_amount" />
+
             <Button
                 android:id="@+id/button_calc"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginLeft="24dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:layout_marginRight="24dp"
                 android:text="@string/oblicz"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.489"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/space3" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_density" />
 
             <Space
                 android:id="@+id/space5"
@@ -194,10 +234,10 @@
                 android:id="@+id/space6"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/button_calc"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/space5" />
+                app:layout_constraintTop_toBottomOf="@+id/editText_density" />
 
             <ScrollView
                 android:layout_width="0dp"
@@ -206,7 +246,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/space6"
+                app:layout_constraintTop_toBottomOf="@+id/button_calc"
                 app:layout_constraintVertical_bias="0.0">
 
                 <LinearLayout
@@ -238,7 +278,8 @@
                             android:gravity="center"
                             android:text=""
                             android:textColor="@color/colorPharmacy"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:paddingLeft="25dp"/>
 
                         <ImageView
                             android:layout_width="fill_parent"
@@ -272,7 +313,8 @@
                             android:layout_weight="0"
                             android:text="@string/obj_to_ml"
                             android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:paddingRight="30dp"/>
 
 
                     </LinearLayout>

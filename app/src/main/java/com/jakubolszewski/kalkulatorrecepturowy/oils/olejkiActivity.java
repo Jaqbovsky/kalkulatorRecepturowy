@@ -46,8 +46,8 @@ public class olejkiActivity extends AppCompatActivity implements AdapterView.OnI
         calculation2_TV = findViewById(R.id.textView_calculation2);
         calculation3_TV = findViewById(R.id.textView_calculation3);
 
-        textView_oilMain = findViewById(R.id.textView_mainVit);
-        textView_oilMain2 = findViewById(R.id.textView_mainVit2);
+        textView_oilMain = findViewById(R.id.textView_mainOil);
+        textView_oilMain2 = findViewById(R.id.textView_mainOil2);
 
         title1_TV = findViewById(R.id.textView_title1);
         title2_TV = findViewById(R.id.textView_title2);
@@ -119,16 +119,20 @@ public class olejkiActivity extends AppCompatActivity implements AdapterView.OnI
                 //-----------------------------OLEJEK-MIĘTOWY---------------------------\\
                 if (companyChoice == 1) {
 
+                    textView_oilMain.setText("Olejek miętowy");
+                    textView_oilMain2.setText("(0.9026 g/ml)");
+
                     //-----------------------------GRAM---------------------------\\
                     if (unitChoice == 1) {
 
                         grams = amount;
                         volume = grams / 0.9026;
-                        drops = grams / 0.019;
 
                         volume *= 100;
                         volume = Math.round(volume);
                         volume /= 100;
+
+                        drops = grams / 0.019;
 
                         drops = Math.round(drops);
 
@@ -179,7 +183,8 @@ public class olejkiActivity extends AppCompatActivity implements AdapterView.OnI
 
                 //-----------------------------OLEJEK-LAWENDOWY---------------------------\\
                 if (companyChoice == 2) {
-
+                    textView_oilMain.setText("Olejek lawendowy");
+                    textView_oilMain2.setText("(0.8855 g/ml)");
                     //-----------------------------GRAM---------------------------\\
                     if (unitChoice == 1) {
 
@@ -239,7 +244,8 @@ public class olejkiActivity extends AppCompatActivity implements AdapterView.OnI
 
                 //-----------------------------OLEJEK-EUKALIPTUSOWY---------------------------\\
                 if (companyChoice == 3) {
-
+                    textView_oilMain.setText("Olejek eukaliptusowy");
+                    textView_oilMain2.setText("(0.885 g/ml)");
                     //-----------------------------GRAM---------------------------\\
                     if (unitChoice == 1) {
 

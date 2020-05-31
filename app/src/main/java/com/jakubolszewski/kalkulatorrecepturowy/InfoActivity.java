@@ -20,7 +20,9 @@ public class InfoActivity extends AppCompatActivity {
     String change1 = "-Naprawiono obliczenia do olejki";
     String change2 = "-Dodano zakładke \"Informacje\"";
     String change3 = "-Dodano obliczenia do witaminy A + D3";
-    String change4 = "-Dodano powiadomienia";
+    String change4 = "-Dodano obliczenia do witaminy Devicap";
+    String change5 = "-Dodano obliczenia do Oleje";
+    String change6 = "-Dodano powiadomienia";
 
     String feedback= "Znalazłeś błąd lub chcesz zasugerować zmainę, \nkliknij TUTAJ.";
 
@@ -59,7 +61,9 @@ public class InfoActivity extends AppCompatActivity {
                 .setMessage(change1 + "\n\n"
                         + change2 + "\n\n"
                         + change3 + "\n\n"
-                        + change4)
+                        + change4 + "\n\n"
+                        + change5 + "\n\n"
+                        + change6 + "\n\n")
                 .show();
 
     }

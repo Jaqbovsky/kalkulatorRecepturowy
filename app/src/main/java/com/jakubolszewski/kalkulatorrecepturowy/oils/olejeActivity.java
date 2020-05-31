@@ -21,14 +21,13 @@ public class olejeActivity extends AppCompatActivity implements AdapterView.OnIt
     //-----------------------------numeric-variables---------------------------\\
     int companyChoice, unitChoice;
 
-    double amount;
-    double volume, grams;
+    double amount, volume, grams, density;
 
     //-----------------------------text-variables---------------------------\\
     String Company, Unit;
 
-    //-----------------------------layouts-elements---------------------------\\
-    EditText amount_ET;
+
+    EditText amount_ET, density_ET;
     Button calc_btn;
     Spinner spinnerOil, spinnerUnit;
     TextView calculation1_TV, calculation2_TV;
@@ -45,8 +44,8 @@ public class olejeActivity extends AppCompatActivity implements AdapterView.OnIt
         calculation1_TV = findViewById(R.id.textView_calculation1);
         calculation2_TV = findViewById(R.id.textView_calculation2);
 
-        textView_oilMain = findViewById(R.id.textView_mainVit);
-        textView_oilMain2 = findViewById(R.id.textView_mainVit2);
+        textView_oilMain = findViewById(R.id.textView_mainOil);
+        textView_oilMain2 = findViewById(R.id.textView_mainOil2);
 
         title1_TV = findViewById(R.id.textView_title1);
         title2_TV = findViewById(R.id.textView_title2);
@@ -73,7 +72,7 @@ public class olejeActivity extends AppCompatActivity implements AdapterView.OnIt
 
         //-----------------------------TextEdit---------------------------\\
         amount_ET = findViewById(R.id.editText_amount);
-
+        density_ET = findViewById(R.id.editText_density);
         //-----------------------------Linear-Layout---------------------------\\
         linearLayout1 = findViewById(R.id.linearLayout1);
         linearLayout2 = findViewById(R.id.linearLayout2);
@@ -88,6 +87,8 @@ public class olejeActivity extends AppCompatActivity implements AdapterView.OnIt
             public void onClick(View v) {
                 final String valueFromET = amount_ET.getText().toString();
 
+                String valueFromDensityET = density_ET.getText().toString();
+
                 linearLayout1.setVisibility(View.VISIBLE);
                 linearLayout2.setVisibility(View.VISIBLE);
 
@@ -97,15 +98,26 @@ public class olejeActivity extends AppCompatActivity implements AdapterView.OnIt
                     amount_ET.setError("To pole jest wymagane");
                 }
 
+
                 //------------------------------OLEUM-RAPE----------------------------\\
                 if (companyChoice == 1){
+                    textView_oilMain.setText("Oleum rapae");
+
+
+                    if (!valueFromDensityET.isEmpty()) {
+                        density = Double.parseDouble(valueFromDensityET);
+                    } else {
+                        density = 0.917;
+                    }
+
+                    textView_oilMain2.setText("(" + density + " g/ml)");
 
                     //-------------------------------GRAM-----------------------------\\
                     if (unitChoice == 1){
 
                         grams = amount;
 
-                        volume = grams / 0.917;
+                        volume = grams / density;
 
                         volume *= 100;
                         volume = Math.round(volume);
@@ -116,23 +128,61 @@ public class olejeActivity extends AppCompatActivity implements AdapterView.OnIt
                     //-----------------------------MILILITR---------------------------\\
                     if (unitChoice == 2){
 
+                        volume = amount;
+
+                        grams = volume * density;
+
+                        grams *= 100;
+                        grams = Math.round(grams);
+                        grams /= 100;
+
                     }
 
-                    calculation1_TV.setText(grams + "");
+                    calculation1_TV.setText(grams + " g");
+                    calculation2_TV.setText(volume + " ml");
                 }
 
                 //-----------------------------OLEUM-RICINI---------------------------\\
-                if (companyChoice == 1){
+                if (companyChoice == 2){
+
+                    textView_oilMain.setText("Oleum Ricini");
+
+                    density = 0.98;
+                    if (!valueFromDensityET.isEmpty()) {
+                        density = Double.parseDouble(valueFromDensityET);
+                    } else {
+                        density = 0.98;
+                    }
+                    textView_oilMain2.setText("(" + density + " g/ml)");
 
                     //-------------------------------GRAM-----------------------------\\
                     if (unitChoice == 1){
+
+                        grams = amount;
+
+                        volume = grams / density;
+
+                        volume *= 100;
+                        volume = Math.round(volume);
+                        volume /= 100;
 
                     }
 
                     //-----------------------------MILILITR---------------------------\\
                     if (unitChoice == 2){
 
+                        volume = amount;
+
+                        grams = volume * density;
+
+                        grams *= 100;
+                        grams = Math.round(grams);
+                        grams /= 100;
+
                     }
+
+                    calculation1_TV.setText(grams + " g");
+                    calculation2_TV.setText(volume + " ml");
                 }
             }
         });
@@ -152,12 +202,17 @@ public class olejeActivity extends AppCompatActivity implements AdapterView.OnIt
         if (spinnerCompany.getId() == R.id.spinner_Company) {
             Company = parent.getItemAtPosition(position).toString();
 
-            if (Company.contains("Rape")) {
+            if (Company.contains("Rapae")) {
                 companyChoice = 1;
+
+                density_ET.setHint("0.917 g/ml");
+
             }
 
             if (Company.contains("Ricini")) {
                 companyChoice = 2;
+
+                density_ET.setHint("0.98 g/ml");
             }
 
         }

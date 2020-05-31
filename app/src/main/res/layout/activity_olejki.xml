@@ -272,7 +272,8 @@
                             android:layout_weight="0"
                             android:text="@string/obj_to_ml"
                             android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:paddingRight="20dp"/>
 
                         <TextView
                             android:id="@+id/textView_title3"

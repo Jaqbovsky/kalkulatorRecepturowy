@@ -27,7 +27,7 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
     double volumeFagron, dropsFagron, gramsFagron;
 
     //-----------------------------text-variables---------------------------\\
-    String Company, Unit, Hasco, Medana, Fargon, gram;
+    String Company;
 
     //-----------------------------layouts-elements---------------------------\\
     EditText amount_ET;

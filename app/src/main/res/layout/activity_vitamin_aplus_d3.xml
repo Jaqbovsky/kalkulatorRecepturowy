@@ -204,7 +204,7 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView_mainOil"
+                            android:id="@+id/textView_mainVit"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
@@ -247,7 +247,8 @@
                             android:layout_weight="0"
                             android:text="@string/obj_to_ml"
                             android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                            android:textSize="16sp"
+                            android:paddingRight="20dp"/>
 
                         <TextView
                             android:id="@+id/textView_title3"
@@ -282,7 +283,7 @@
                             android:contentDescription="@string/todo" />
 
                         <TextView
-                            android:id="@+id/textView_mainOil2"
+                            android:id="@+id/textView_mainVit2"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"

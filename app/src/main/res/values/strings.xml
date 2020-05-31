@@ -36,6 +36,11 @@
     <string name="button_details">Pokaż szczegóły widomości</string>
     <string name="button_send">Wyślij</string>
     <string name="oleje">Oleje</string>
+    <string name="wybierz_olej">Wybierz olej</string>
+    <string name="vitaminum_devicap">Devicap</string>
+    <string name="alcohol">Spirytus</string>
+    <string name="podaj_gestosc">Podaj gestość</string>
+    <string name="podaj_stezenie_w_aptece">Podaj stężenie spirytusu, \nktórego chcesz użyć</string>
 
 
 </resources>
