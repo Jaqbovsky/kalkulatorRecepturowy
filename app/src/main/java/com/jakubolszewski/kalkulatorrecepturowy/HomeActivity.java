@@ -18,6 +18,8 @@ public class HomeActivity extends AppCompatActivity{
             "Spirytus",
             "Olejki",
             "Oleje",
+            "Nystatyna",
+            "Dimeticonum",
             "Informacje"
     };
 
@@ -29,6 +31,8 @@ public class HomeActivity extends AppCompatActivity{
         R.drawable.ic_alcohol,
         R.drawable.ic_olejki,
         R.drawable.ic_olejki,
+        R.drawable.ic_eyedropper,
+        R.drawable.ic_eyedropper,
         R.drawable.ic_info_outline_black_24dp,
 
     };

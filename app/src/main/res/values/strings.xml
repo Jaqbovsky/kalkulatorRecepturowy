@@ -41,6 +41,8 @@
     <string name="alcohol">Spirytus</string>
     <string name="podaj_gestosc">Podaj gestość</string>
     <string name="podaj_stezenie_w_aptece">Podaj stężenie spirytusu, \nktórego chcesz użyć</string>
+    <string name="dimeticonum">Dimeticonum</string>
+    <string name="nystatyna">Nystatyna</string>
 
 
 </resources>

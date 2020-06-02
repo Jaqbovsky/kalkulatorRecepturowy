@@ -7,9 +7,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
@@ -20,10 +23,10 @@ public class alcoholActivity extends AppCompatActivity implements AdapterView.On
     //-----------------------------numeric-variables---------------------------\\
     int selectedTypeOf, concentrationValue;
 
-    double possessedConcentration, howMuchToRecive, outcome, outcomeWater, concentrationValueDegree;
+    double possessedConcentration, howMuchToRecive, outcome, outcomeWater, concentrationValueDegree, compare;
 
     //-----------------------------text-variables---------------------------\\
-    String selectedConcentration, typeOfConcentration;
+    String selectedConcentration, typeOfConcentration, trim;
 
     //-----------------------------layouts-elements---------------------------\\
     Spinner concentrationSpinner, selectTypeOfConcentrationSpinner;
@@ -120,27 +123,60 @@ public class alcoholActivity extends AppCompatActivity implements AdapterView.On
         hMDegree.put(48, 40.61);
         hMDegree.put(49, 41.58);
         hMDegree.put(50, 42.44);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
-        hMDegree.put(,);
+        hMDegree.put(51, 43.40);
+        hMDegree.put(52, 44.34);
+        hMDegree.put(53, 45.27);
+        hMDegree.put(54, 46.29);
+        hMDegree.put(55, 47.21);
+        hMDegree.put(56, 48.21);
+        hMDegree.put(57, 49.21);
+        hMDegree.put(58, 50.11);
+        hMDegree.put(59, 51.09);
+        hMDegree.put(60, 52.16);
+        hMDegree.put(61, 53.14);
+        hMDegree.put(62, 54.10);
+        hMDegree.put(63, 55.16);
+        hMDegree.put(64, 56.21);
+        hMDegree.put(65, 57.16);
+        hMDegree.put(66, 58.21);
+        hMDegree.put(67, 59.25);
+        hMDegree.put(68, 60.28);
+        hMDegree.put(69, 61.40);
+        hMDegree.put(70, 62.43);
+        hMDegree.put(71, 63.54);
+        hMDegree.put(72, 64.57);
+        hMDegree.put(73, 65.68);
+        hMDegree.put(74, 66.78);
+        hMDegree.put(75, 67.88);
+        hMDegree.put(76, 68.97);
+        hMDegree.put(77, 70.07);
+        hMDegree.put(78, 71.24);
+        hMDegree.put(79, 72.33);
+        hMDegree.put(80, 73.50);
+        hMDegree.put(81, 74.66);
+        hMDegree.put(82, 75.81);
+        hMDegree.put(83, 77.05);
+        hMDegree.put(84, 78.20);
+        hMDegree.put(85, 79.42);
+        hMDegree.put(86, 80.63);
+        hMDegree.put(87, 81.92);
+        hMDegree.put(88, 83.12);
+        hMDegree.put(89, 84.38);
+        hMDegree.put(90, 85.71);
+        hMDegree.put(91, 87.03);
+        hMDegree.put(92, 88.34);
+        hMDegree.put(93, 89.70);
+        hMDegree.put(94, 91.4);
+        hMDegree.put(95, 92.43);
+        hMDegree.put(96, 93.87);
+        hMDegree.put(97, 94.36);
+        hMDegree.put(98, 96.87);
+        hMDegree.put(99, 98.41);
+        hMDegree.put(100, 100.0);
 
-
+        //-----------------------------Spinner---------------------------\\
+        final LinearLayout linearLayout = findViewById(R.id.linearLayout);
+        linearLayout.setVisibility(View.GONE);
 
         //-----------------------------textview---------------------------\\
         alcohol_TV = findViewById(R.id.textView_alcohol);
@@ -190,6 +226,7 @@ public class alcoholActivity extends AppCompatActivity implements AdapterView.On
                     howMuchToRecive_ET.setError("To pole jest wymagane");
                 }
 
+                linearLayout.setVisibility(View.VISIBLE);
 
                 //------------------------------v/v---------------------------\\
                 if (selectedTypeOf == 1) {
@@ -198,20 +235,27 @@ public class alcoholActivity extends AppCompatActivity implements AdapterView.On
 
                     concentrationValueDegree = hMDegree.get(concentrationValue);
 
-                    outcome = howMuchToRecive * concentrationValueDegree / possessedConcentration;
+                    trim = selectedConcentration;
+                    trim = trim.substring(0, trim.indexOf("(")).replace("°", "").trim();
 
-                    outcome *= 100;
-                    outcome = Math.round(outcome);
-                    outcome /= 100;
+                    Toast.makeText(alcoholActivity.this, trim, Toast.LENGTH_SHORT).show();
 
-                    outcomeWater = howMuchToRecive - outcome;
+                    compare = Double.valueOf(trim);
 
-                    outcomeWater *= 100;
-                    outcomeWater = Math.round(outcomeWater);
-                    outcomeWater /= 100;
+                    compare = Math.round(compare);
 
-                    alcohol_TV.setText("- " + outcome + " g etanolu");
-                    water_TV.setText("- " + outcomeWater + " g wody");
+                    if (concentrationValue < compare) {
+
+                        outcome = howMuchToRecive * concentrationValueDegree / possessedConcentration;
+
+                    } else {
+                        new AlertDialog.Builder(alcoholActivity.this)
+                                .setTitle("Błąd")
+                                .setMessage("Procent objętościowy(v/v) końcowego roztworu nie może być większy niż procent objętościowy posiadanego etanolu")
+                                .show();
+                    }
+
+
                 }
 
                 //------------------------------m/m---------------------------\\
@@ -219,25 +263,31 @@ public class alcoholActivity extends AppCompatActivity implements AdapterView.On
 
                     possessedConcentration = hMConcentration.get(selectedConcentration);
 
-                    outcome = howMuchToRecive * concentrationValue / possessedConcentration;
+                    if (concentrationValue < possessedConcentration) {
 
-                    outcome *= 100;
-                    outcome = Math.round(outcome);
-                    outcome /= 100;
+                        outcome = howMuchToRecive * concentrationValue / possessedConcentration;
 
-                    outcomeWater = howMuchToRecive - outcome;
-
-                    outcomeWater *= 100;
-                    outcomeWater = Math.round(outcomeWater);
-                    outcomeWater /= 100;
-
-                    alcohol_TV.setText("- " + outcome + " g etanolu");
-                    water_TV.setText("- " + outcomeWater + " g wody");
+                    } else {
+                        new AlertDialog.Builder(alcoholActivity.this)
+                                .setTitle("Błąd")
+                                .setMessage("Procent masowy(m/m) końcowego roztworu nie może być większy niż procent objętościowy posiadanego etanolu")
+                                .show();
+                    }
 
                 }
 
+                outcome *= 100;
+                outcome = Math.round(outcome);
+                outcome /= 100;
 
+                outcomeWater = howMuchToRecive - outcome;
 
+                outcomeWater *= 100;
+                outcomeWater = Math.round(outcomeWater);
+                outcomeWater /= 100;
+
+                alcohol_TV.setText("- " + outcome + " g etanolu");
+                water_TV.setText("- " + outcomeWater + " g wody");
 
             }
         });

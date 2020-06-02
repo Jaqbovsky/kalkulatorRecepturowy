@@ -56,7 +56,7 @@ public class GridAdapter extends BaseAdapter {
 
     @SuppressLint("InflateParams")
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, final View convertView, ViewGroup parent) {
 
         layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -98,6 +98,14 @@ public class GridAdapter extends BaseAdapter {
                     }
                     if (values[position].equals("Oleje")){
                         Intent intent = new Intent(context, olejeActivity.class);
+                        context.startActivity(intent);
+                    }
+                    if (values[position].equals("Nystatyna")){
+                        Intent intent = new Intent(context, nystatynaActivity.class);
+                        context.startActivity(intent);
+                    }
+                    if (values[position].equals("Dimeticonum")){
+                        Intent intent = new Intent(context, dimeticonumActivity.class);
                         context.startActivity(intent);
                     }
                     if (values[position].equals("Informacje")){
