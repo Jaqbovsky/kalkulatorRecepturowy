@@ -7,7 +7,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -175,8 +174,6 @@ public class alcoholActivity extends AppCompatActivity implements AdapterView.On
         hMDegree.put(100, 100.0);
 
         //-----------------------------Spinner---------------------------\\
-        final LinearLayout linearLayout = findViewById(R.id.linearLayout);
-        linearLayout.setVisibility(View.GONE);
 
         //-----------------------------textview---------------------------\\
         alcohol_TV = findViewById(R.id.textView_alcohol);
@@ -226,7 +223,6 @@ public class alcoholActivity extends AppCompatActivity implements AdapterView.On
                     howMuchToRecive_ET.setError("To pole jest wymagane");
                 }
 
-                linearLayout.setVisibility(View.VISIBLE);
 
                 //------------------------------v/v---------------------------\\
                 if (selectedTypeOf == 1) {
@@ -275,20 +271,20 @@ public class alcoholActivity extends AppCompatActivity implements AdapterView.On
                     }
 
                 }
+                if (concentrationValue < compare) {
+                    outcome *= 100;
+                    outcome = Math.round(outcome);
+                    outcome /= 100;
 
-                outcome *= 100;
-                outcome = Math.round(outcome);
-                outcome /= 100;
+                    outcomeWater = howMuchToRecive - outcome;
 
-                outcomeWater = howMuchToRecive - outcome;
+                    outcomeWater *= 100;
+                    outcomeWater = Math.round(outcomeWater);
+                    outcomeWater /= 100;
 
-                outcomeWater *= 100;
-                outcomeWater = Math.round(outcomeWater);
-                outcomeWater /= 100;
-
-                alcohol_TV.setText("- " + outcome + " g etanolu");
-                water_TV.setText("- " + outcomeWater + " g wody");
-
+                    alcohol_TV.setText(" " + outcome + " g etanolu");
+                    water_TV.setText(" " + outcomeWater + " g wody");
+                }
             }
         });
 

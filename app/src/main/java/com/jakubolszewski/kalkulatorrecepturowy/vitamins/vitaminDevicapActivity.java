@@ -7,7 +7,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -22,6 +21,7 @@ public class vitaminDevicapActivity extends AppCompatActivity implements Adapter
 
     double amount;
     double volume, grams, drops, massUnit;
+    double hmts1;
 
     //-----------------------------text-variables---------------------------\\
     String Unit;
@@ -33,7 +33,7 @@ public class vitaminDevicapActivity extends AppCompatActivity implements Adapter
     TextView calculation1_TV, calculation2_TV, calculation3_TV, calculation4_TV;
     TextView textView_vitMain, textView_vitMain2;
     TextView title1_TV, title2_TV, title3_TV;
-    LinearLayout linearLayout1, linearLayout2;
+    TextView hmts1_TV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +53,9 @@ public class vitaminDevicapActivity extends AppCompatActivity implements Adapter
         title2_TV = findViewById(R.id.textView_title2);
         title3_TV = findViewById(R.id.textView_title3);
 
+        hmts1_TV = findViewById(R.id.textView_howMuchToSell_1);
+
+
         //-----------------------------Spinner---------------------------\\
         spinnerOil = findViewById(R.id.spinner_Company);
         spinnerUnit = findViewById(R.id.spinner_unit);
@@ -67,13 +70,6 @@ public class vitaminDevicapActivity extends AppCompatActivity implements Adapter
         //-----------------------------TextEdit---------------------------\\
         amount_ET = findViewById(R.id.editText_amount);
 
-        //-----------------------------Linear-Layout---------------------------\\
-        linearLayout1 = findViewById(R.id.linearLayout1);
-        linearLayout2 = findViewById(R.id.linearLayout2);
-
-        linearLayout1.setVisibility(View.GONE);
-        linearLayout2.setVisibility(View.GONE);
-
         //-----------------------------Button---------------------------\\
         calc_btn = findViewById(R.id.button_calc);
         calc_btn.setOnClickListener(new View.OnClickListener() {
@@ -81,8 +77,6 @@ public class vitaminDevicapActivity extends AppCompatActivity implements Adapter
             public void onClick(View v) {
                 final String valueFromET = amount_ET.getText().toString();
 
-                linearLayout1.setVisibility(View.VISIBLE);
-                linearLayout2.setVisibility(View.VISIBLE);
 
                 if (!valueFromET.isEmpty()) {
                     amount = Double.parseDouble(valueFromET);
@@ -192,6 +186,12 @@ public class vitaminDevicapActivity extends AppCompatActivity implements Adapter
                 String massUnit_String = String.valueOf(massUnit).replace(".0", "");
 
                 calculation4_TV.setText(massUnit_String + " j.m.");
+
+                hmts1 = volume / 10;
+                hmts1 *= 1000;
+                hmts1 = Math.round(hmts1);
+                hmts1 /= 1000;
+                hmts1_TV.setText(hmts1 + " \nopakowania Devicap'u");
 
             }
         });

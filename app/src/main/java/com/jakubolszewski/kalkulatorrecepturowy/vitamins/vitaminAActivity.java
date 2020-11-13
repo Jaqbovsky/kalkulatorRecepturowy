@@ -2,6 +2,7 @@ package com.jakubolszewski.kalkulatorrecepturowy.vitamins;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,16 +19,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.jakubolszewski.kalkulatorrecepturowy.HomeActivity;
 import com.jakubolszewski.kalkulatorrecepturowy.R;
+import com.jakubolszewski.kalkulatorrecepturowy.auxiliarySolutionActivity;
 
 public class vitaminAActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     //-----------------------------numeric-variables---------------------------\\
     int companyChoice, unitChoice;
 
-    double  amount;
+    double amount;
     double volumeHasco, dropsHasco, massUnitHasco, gramsHasco;
     double volumeMedana, dropsMedana, massUnitMedana, gramsMedana;
     double volumeFagron, dropsFagron, massUnitFagron, gramsFagron;
+    double hmts1, hmts2, hmts3;
     //-----------------------------text-variables---------------------------\\
     String Company, Unit, Hasco, Medana, Fargon, gram, jm;
 
@@ -37,12 +40,13 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
     Spinner spinnerCompany, spinnerUnit;
     TextView calculation1_TV, calculation2_TV, calculation3_TV, calculation4_TV;
     TextView calculation5_TV, calculation6_TV, calculation7_TV, calculation8_TV;
-    TextView calculation9_TV,calculation10_TV, calculation11_TV, calculation12_TV;
+    TextView calculation9_TV, calculation10_TV, calculation11_TV, calculation12_TV;
     TextView textView_text1, textView_text2, textView_text3, textView_text4, textView_text5, textView_text6;
     TextView textView_vitMain, textView_vitMain2;
     TextView title1_TV, title2_TV, title3_TV, title4_TV;
     TextView title5_TV, title6_TV, title7_TV, title8_TV;
     TextView title9_TV, title10_TV, title11_TV, title12_TV;
+    TextView hmts1_TV, hmts2_TV, hmts3_TV;
     LinearLayout linearLayout1, linearLayout2;
 
     @SuppressLint("RestrictedApi")
@@ -75,8 +79,7 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
         calculation11_TV = findViewById(R.id.textView_calculation11);
         calculation12_TV = findViewById(R.id.textView_calculation12);
 
-        textView_text1 = findViewById(R.id.textView_text1);
-        textView_text2 = findViewById(R.id.textView_text2);
+
         textView_text3 = findViewById(R.id.textView_text3);
         textView_text4 = findViewById(R.id.textView_text4);
         textView_text5 = findViewById(R.id.textView_text5);
@@ -97,6 +100,10 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
         title10_TV = findViewById(R.id.textView_title10);
         title11_TV = findViewById(R.id.textView_title11);
         title12_TV = findViewById(R.id.textView_title12);
+
+        hmts1_TV = findViewById(R.id.textView_howMuchToSell_1);
+        hmts2_TV = findViewById(R.id.textView_howMuchToSell_2);
+        hmts3_TV = findViewById(R.id.textView_howMuchToSell_3);
 
         //-----------------------------Spinner---------------------------\\
         spinnerCompany = findViewById(R.id.spinner_Company);
@@ -122,11 +129,8 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
         amount_ET = findViewById(R.id.editText_amount);
 
         //-----------------------------Linear-Layout---------------------------\\
-        linearLayout1 = findViewById(R.id.linearLayout1);
-        linearLayout2 = findViewById(R.id.linearLayout2);
 
-        linearLayout1.setVisibility(View.GONE);
-        linearLayout2.setVisibility(View.GONE);
+
         //-----------------------------Button---------------------------\\
         calc_btn = findViewById(R.id.button_calc);
         calc_btn.setOnClickListener(new View.OnClickListener() {
@@ -134,8 +138,6 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
             public void onClick(View v) {
                 final String valueFromET = amount_ET.getText().toString();
 
-                linearLayout1.setVisibility(View.VISIBLE);
-                linearLayout2.setVisibility(View.VISIBLE);
 
                 if (!valueFromET.isEmpty()) {
                     amount = Double.parseDouble(valueFromET);
@@ -170,21 +172,18 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                         dropsHasco = volumeHasco * 28;
                         massUnitHasco = volumeHasco * 45000;
 
-                        dropsHasco = Math.round(dropsHasco);
-                        String drops_String = String.valueOf(dropsHasco);
-                        drops_String = drops_String.replace(".0", "");
+
 
                         massUnitHasco = Math.round(massUnitHasco);
                         String massUnit_String = String.valueOf(massUnitHasco).replace(".0", "");
 
                         calculation1_TV.setText(volumeHasco + "ml");
-                        calculation2_TV.setText(drops_String + " kropli");
+                        calculation2_TV.setText((int) dropsHasco + " kropli");
                         calculation3_TV.setText(massUnit_String + " j.m.");
                         calculation4_TV.setText(gramsHasco + "g");
 
                     }
                     //-----------------------------J.M.---------------------------\\
-
                     if (unitChoice == 2) {
                         massUnitHasco = amount;
 
@@ -213,9 +212,8 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                         calculation4_TV.setText(gramsHasco + "g");
 
                     }
-
                     //-----------------------------mililitr---------------------------\\
-                    if (unitChoice ==3){
+                    if (unitChoice == 3) {
 
                         volumeHasco = amount;
 
@@ -240,6 +238,12 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                         calculation4_TV.setText(gramsHasco + "g");
 
                     }
+
+                    hmts1 = volumeHasco / 10;
+                    hmts1 *= 1000;
+                    hmts1 = Math.round(hmts1);
+                    hmts1 /= 1000;
+                    hmts1_TV.setText(hmts1 + " \nopakowania witaminy A");
                     //-----------------------------A-Hasco-na-A-Medana---------------------------\\
                     massUnitMedana = massUnitHasco;
 
@@ -264,9 +268,15 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
 
                     calculation5_TV.setText(gramsMedana + " g");
                     calculation6_TV.setText(volumeMedana + " ml");
-                    calculation7_TV.setText(drops_String + " kropli");
+                    calculation7_TV.setText((int) dropsMedana + " kropli");
                     calculation8_TV.setText(massUnit_String + " j.m.");
                     textView_text3.setText("Vit. A Medana");
+
+                    hmts2 = volumeMedana / 10;
+                    hmts2 *= 1000;
+                    hmts2 = Math.round(hmts2);
+                    hmts2 /= 1000;
+                    hmts2_TV.setText(hmts2 + " \nopakowania witaminy A");
 
                     //-----------------------------A-Hasco-na-A-Fagron---------------------------\\
 
@@ -286,8 +296,10 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                     String massUnitFagron_String = String.valueOf(massUnitFagron).replace(".0", "");
 
                     calculation9_TV.setText(gramsFagron + " g");
-                    calculation11_TV.setText(dropsFagron_String + " kropli");
+                    calculation11_TV.setText((int) dropsFagron+ " kropli");
                     calculation12_TV.setText(massUnitFagron_String + " j.m.");
+
+                    hmts3_TV.setText("Jeszcze tego nie wpieramy.");
 
 
                 }
@@ -325,8 +337,9 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
 
                         calculation4_TV.setText(gramsMedana + " g");
                         calculation1_TV.setText(volumeMedana + " ml");
-                        calculation2_TV.setText(drops_String + " kropli");
+                        calculation2_TV.setText((int) dropsMedana + " kropli");
                         calculation3_TV.setText(massUnit_String + " j.m.");
+
 
                     }
 
@@ -360,7 +373,7 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                         calculation3_TV.setText(massUnit_String + " j.m.");
                     }
                     //-----------------------------mililitr---------------------------\\
-                    if (unitChoice ==3){
+                    if (unitChoice == 3) {
 
                         volumeMedana = amount;
 
@@ -383,6 +396,12 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                         calculation3_TV.setText(massUnit_String + " j.m.");
 
                     }
+
+                    hmts1 = volumeMedana / 10;
+                    hmts1 *= 1000;
+                    hmts1 = Math.round(hmts1);
+                    hmts1 /= 1000;
+                    hmts1_TV.setText(hmts1 + " \nopakowania witaminy A");
 
                     //-----------------------------A-Medana-na-A-Hasco---------------------------\\
 
@@ -411,6 +430,12 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                     calculation7_TV.setText(dropsHasco_String + " kropli");
                     calculation8_TV.setText(massUnitHasco_String + " j.m.");
 
+                    hmts2 = volumeHasco / 10.0;
+                    hmts2 *= 1000;
+                    hmts2 = Math.round(hmts2);
+                    hmts2 /= 1000;
+                    hmts2_TV.setText(hmts2 + " \nopakowania witaminy A");
+
                     //-----------------------------A-Medana-na-A-Fagron---------------------------\\
                     massUnitFagron = massUnitMedana;
 
@@ -431,6 +456,8 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                     calculation11_TV.setText(dropsFagron_String + " kropli");
                     calculation12_TV.setText(massUnitFagron_String + " j.m.");
 
+                    hmts3_TV.setText("Jeszcze tego nie wpieramy.");
+
                 }
 
                 //-----------------------------FAGRON---------------------------\\
@@ -443,6 +470,15 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                     textView_text6.setText("(1.08 g/ml)");
                     title10_TV.setVisibility(View.VISIBLE);
                     calculation10_TV.setVisibility(View.VISIBLE);
+
+                    textView_vitMain2.setTextColor(Color.RED);
+                    textView_vitMain2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(vitaminAActivity.this, auxiliarySolutionActivity.class);
+                            startActivity(intent);
+                        }
+                    });
 
                     if (unitChoice == 1) {
 
@@ -470,6 +506,7 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                         calculation4_TV.setText(gramsFagron + " g");
                         calculation2_TV.setText(dropsFagron_String + " kropli");
                         calculation3_TV.setText(massUnitFagron + " j.m.");
+                        hmts1_TV.setText("Jeszcze tego nie wpieramy.");
 
                         massUnitHasco = massUnitFagron;
 
@@ -494,6 +531,12 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                         calculation7_TV.setText(dropsHasco_String + " kropli");
                         calculation8_TV.setText(massUnitHasco + " j.m.");
 
+                        hmts2 = volumeHasco / 10;
+                        hmts2 *= 1000;
+                        hmts2 = Math.round(hmts2);
+                        hmts2 /= 1000;
+                        hmts2_TV.setText(hmts2 + " \nopakowania witaminy A");
+
                         massUnitMedana = massUnitFagron;
 
                         volumeMedana = massUnitMedana / 50000;
@@ -517,10 +560,16 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
                         calculation11_TV.setText(dropsMedana_String + " kropli");
                         calculation12_TV.setText(massUnitMedana + " j.m.");
 
+                        hmts3 = volumeMedana / 10;
+                        hmts3 *= 1000;
+                        hmts3 = Math.round(hmts3);
+                        hmts3 /= 1000;
+                        hmts3_TV.setText(hmts3 + " \nopakowania witaminy A");
+
 
                     }
                     //-----------------------------mililitr---------------------------\\
-                    if (unitChoice ==3){
+                    if (unitChoice == 3) {
 
                         new AlertDialog.Builder(vitaminAActivity.this)
                                 .setTitle("Błąd")
@@ -573,7 +622,7 @@ public class vitaminAActivity extends AppCompatActivity implements AdapterView.O
             if (Unit.contains("j.m.")) {
                 unitChoice = 2;
             }
-            if (Unit.contains("ml")){
+            if (Unit.contains("ml")) {
                 unitChoice = 3;
             }
         }

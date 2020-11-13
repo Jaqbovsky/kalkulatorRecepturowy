@@ -7,4 +7,5 @@
     <color name="colorVitSelectBtn">#7A89C368</color>
     <color name="spinnerColor">#AD93B8D6</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="cardColor">#DAE8E7</color>
 </resources>

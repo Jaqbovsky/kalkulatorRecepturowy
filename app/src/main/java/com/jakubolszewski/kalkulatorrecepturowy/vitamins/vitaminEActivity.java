@@ -7,7 +7,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -25,6 +24,7 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
     double volumeHasco, dropsHasco, gramsHasco;
     double volumeMedana, dropsMedana, gramsMedana;
     double volumeFagron, dropsFagron, gramsFagron;
+    double hmts1, hmts2, hmts3;
 
     //-----------------------------text-variables---------------------------\\
     String Company;
@@ -41,7 +41,7 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
     TextView title1_TV, title2_TV, title3_TV;
     TextView title4_TV, title5_TV, title6_TV;
     TextView title7_TV, title8_TV, title9_TV;
-    LinearLayout linearLayout1, linearLayout2;
+    TextView hmts1_TV, hmts2_TV, hmts3_TV;
 
 
     @Override
@@ -60,8 +60,7 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
         calculation8_TV = findViewById(R.id.textView_calculation8);
         calculation9_TV = findViewById(R.id.textView_calculation9);
 
-        textView_text1 = findViewById(R.id.textView_text1);
-        textView_text2 = findViewById(R.id.textView_text2);
+
         textView_text3 = findViewById(R.id.textView_text3);
         textView_text4 = findViewById(R.id.textView_text4);
         textView_text5 = findViewById(R.id.textView_text5);
@@ -80,6 +79,10 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
         title8_TV = findViewById(R.id.textView_title8);
         title9_TV = findViewById(R.id.textView_title9);
 
+        hmts1_TV = findViewById(R.id.textView_howMuchToSell_1);
+        hmts2_TV = findViewById(R.id.textView_howMuchToSell_2);
+        hmts3_TV = findViewById(R.id.textView_howMuchToSell_3);
+
         //-----------------------------Spinner---------------------------\\
         spinnerCompany = findViewById(R.id.spinner_Company);
 
@@ -95,11 +98,10 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
         amount_ET = findViewById(R.id.editText_amount);
 
         //-----------------------------Linear-Layout---------------------------\\
-        linearLayout1 = findViewById(R.id.linearLayout1);
-        linearLayout2 = findViewById(R.id.linearLayout2);
 
-        linearLayout1.setVisibility(View.GONE);
-        linearLayout2.setVisibility(View.GONE);
+
+        //linearLayout1.setVisibility(View.GONE);
+        //linearLayout2.setVisibility(View.GONE);
 
         //-----------------------------Button---------------------------\\
         calc_btn = findViewById(R.id.button_calc);
@@ -109,8 +111,8 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
 
                 final String valueFromET = amount_ET.getText().toString();
 
-                linearLayout1.setVisibility(View.VISIBLE);
-                linearLayout2.setVisibility(View.VISIBLE);
+                //linearLayout1.setVisibility(View.VISIBLE);
+                //linearLayout2.setVisibility(View.VISIBLE);
 
                 if (!valueFromET.isEmpty()) {
                     amount = Double.parseDouble(valueFromET);
@@ -147,6 +149,12 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation2_TV.setText(volumeFagron + " ml");
                     calculation3_TV.setText(dropsFagron_String + " kropli");
 
+                    hmts1 = volumeFagron / 10;
+                    hmts1 *= 1000;
+                    hmts1 = Math.round(hmts1);
+                    hmts1 /= 1000;
+                    hmts1_TV.setText(hmts1 + " \nopakowania witaminy E");
+
                     //------------------------------FAGRON-GRAMY-NA-HASCO-----------------------------\\
 
                     volumeHasco = gramsFagron / 0.3;
@@ -171,6 +179,12 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation5_TV.setText(volumeHasco + " ml");
                     calculation6_TV.setText(dropsHasco_String + " kropli");
 
+                    hmts2 = volumeHasco / 10;
+                    hmts2 *= 1000;
+                    hmts2 = Math.round(hmts2);
+                    hmts2 /= 1000;
+                    hmts2_TV.setText(hmts2 + " \nopakowania witaminy E");
+
                     volumeMedana = volumeHasco;
                     gramsMedana = gramsHasco;
                     dropsMedana = dropsHasco;
@@ -181,6 +195,7 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation8_TV.setText(volumeMedana + " ml");
                     calculation9_TV.setText(dropsMedana_String + " kropli");
 
+                    hmts3_TV.setText(hmts2 + " \nopakowania witaminy E");
                 }
 
                 //------------------------------MEDANA-GRAMY-----------------------------\\
@@ -213,16 +228,25 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation2_TV.setText(volumeMedana + " ml");
                     calculation3_TV.setText(dropsMedana_String + " kropli");
 
+                    hmts1 = volumeMedana / 10.0;
+                    hmts1 *= 1000;
+                    hmts1 = Math.round(hmts1);
+                    hmts1 /= 1000;
+                    hmts1_TV.setText(hmts1 + " \nopakowania witaminy E");
 
                     //------------------------------MEDANA-GRAMY-NA-HASCO-----------------------------\\
                     volumeHasco = volumeMedana;
                     gramsHasco = gramsMedana;
+
 
                     String dropsHasco_String = dropsMedana_String;
 
                     calculation4_TV.setText(gramsHasco + " g");
                     calculation5_TV.setText(volumeHasco + " ml");
                     calculation6_TV.setText(dropsHasco_String + " kropli");
+
+                    hmts2 = hmts1;
+                    hmts2_TV.setText(hmts2 + " \nopakowania witaminy E");
 
                     //------------------------------MEDANA-GRAMY-NA-FAGRON-----------------------------\\
                     gramsFagron = volumeMedana * 0.3;
@@ -245,6 +269,12 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation7_TV.setText(gramsFagron + " g");
                     calculation8_TV.setText(volumeFagron + " ml");
                     calculation9_TV.setText(dropsFagron_String + " kropli");
+
+                    hmts3 = volumeFagron / 10.0;
+                    hmts3 *= 1000;
+                    hmts3 = Math.round(hmts3);
+                    hmts3 /= 1000;
+                    hmts3_TV.setText(hmts3 + " \nopakowania witaminy E");
 
 
                 }
@@ -276,6 +306,12 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation2_TV.setText(volumeMedana + " ml");
                     calculation3_TV.setText(dropsMedana_String + " kropli");
 
+                    hmts1 = volumeMedana / 10.0;
+                    hmts1 *= 1000;
+                    hmts1 = Math.round(hmts1);
+                    hmts1 /= 1000;
+                    hmts1_TV.setText(hmts1 + " \nopakowania witaminy E");
+
                     //------------------------------MEDANA-GRAMY-NA-HASCO-----------------------------\\
                     volumeHasco = volumeMedana;
                     gramsHasco = gramsMedana;
@@ -286,8 +322,12 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation5_TV.setText(volumeHasco + " ml");
                     calculation6_TV.setText(dropsHasco_String + " kropli");
 
+                    hmts2 = hmts1;
+                    hmts2_TV.setText(hmts2 + " \nopakowania witaminy E");
+
                     //------------------------------MEDANA-GRAMY-NA-FAGRON-----------------------------\\
                     gramsFagron = volumeMedana * 0.3;
+
 
                     gramsFagron *= 100;
                     gramsFagron = Math.round(gramsFagron);
@@ -307,6 +347,13 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation7_TV.setText(gramsFagron + " g");
                     calculation8_TV.setText(volumeFagron + " ml");
                     calculation9_TV.setText(dropsFagron_String + " kropli");
+
+                    hmts3 = volumeFagron / 10.0;
+                    hmts3 *= 1000;
+                    hmts3 = Math.round(hmts3);
+                    hmts3 /= 1000;
+                    hmts3_TV.setText(hmts3 + " \nopakowania witaminy E");
+
                 }
 
                 //-------------------------------HASCO-GRAMY-----------------------------\\
@@ -339,6 +386,11 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation2_TV.setText(volumeHasco + " ml");
                     calculation3_TV.setText(dropsHasco_String);
 
+                    hmts1 = volumeHasco / 10.0;
+                    hmts1 *= 1000;
+                    hmts1 = Math.round(hmts1);
+                    hmts1 /= 1000;
+                    hmts1_TV.setText(hmts1 + " \nopakowania witaminy E");
 
                     //------------------------------HASCO-GRAMY-NA-MEDANA-----------------------------\\
                     volumeMedana = volumeHasco;
@@ -349,6 +401,9 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation4_TV.setText(gramsMedana + " g");
                     calculation5_TV.setText(volumeMedana + " ml");
                     calculation6_TV.setText(dropsMedana_String + " kropli");
+
+                    hmts2 = hmts1;
+                    hmts2_TV.setText(hmts2 + " \nopakowania witaminy E");
 
                     //------------------------------MEDANA-GRAMY-NA-FAGRON-----------------------------\\
 
@@ -372,6 +427,13 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation7_TV.setText(gramsFagron + " g");
                     calculation8_TV.setText(volumeFagron + " ml");
                     calculation9_TV.setText(dropsFagron_String + " kropli");
+
+                    hmts3 = volumeFagron / 10.0;
+                    hmts3 *= 1000;
+                    hmts3 = Math.round(hmts3);
+                    hmts3 /= 1000;
+                    hmts3_TV.setText(hmts3 + " \nopakowania witaminy E");
+
 
                 }
 
@@ -402,15 +464,24 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation2_TV.setText(volumeHasco + " ml");
                     calculation3_TV.setText(dropsHasco_String + " kropli");
 
+                    hmts1 = volumeHasco / 10.0;
+                    hmts1 *= 1000;
+                    hmts1 = Math.round(hmts1);
+                    hmts1 /= 1000;
+                    hmts1_TV.setText(hmts1 + "\nopkaowania witaminy E");
+
                     //------------------------------HASCO-MILITRY-NA-MEDANA-----------------------------\\
                     volumeMedana = volumeHasco;
                     gramsMedana = gramsHasco;
+                    hmts2 = hmts1;
 
                     String dropsMedana_String = dropsHasco_String;
 
                     calculation4_TV.setText(gramsMedana + " g");
                     calculation5_TV.setText(volumeMedana + " ml");
                     calculation6_TV.setText(dropsMedana_String + " kropli");
+
+                    hmts2_TV.setText(hmts2 + "\nopakowania witaminy E");
 
                     //------------------------------MEDANA-GRAMY-NA-FAGRON-----------------------------\\
                     gramsFagron = volumeHasco * 0.3;
@@ -433,6 +504,13 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation7_TV.setText(gramsFagron + " g");
                     calculation8_TV.setText(volumeFagron + " ml");
                     calculation9_TV.setText(dropsFagron_String + " kropli");
+
+                    hmts3 = volumeFagron / 10.0;
+                    hmts3 *= 1000;
+                    hmts3 = Math.round(hmts3);
+                    hmts3 /= 1000;
+                    hmts3_TV.setText(hmts3 + " \nopakowania witaminy E");
+
 
                 }
 
@@ -463,6 +541,12 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation1_TV.setText(gramsFagron + " g");
                     calculation2_TV.setText(volumeFagron + " ml");
                     calculation3_TV.setText(dropsFagron_String + " kropli");
+
+                    hmts1 = volumeFagron / 10.0;
+                    hmts1 *= 1000;
+                    hmts1 = Math.round(hmts1);
+                    hmts1 /= 1000;
+                    hmts1_TV.setText(hmts1 + " \nopakowania witaminy E");
 
                     //------------------------------FAGRON-GRAMY-NA-HASCO-----------------------------\\
 
@@ -497,6 +581,15 @@ public class vitaminEActivity extends AppCompatActivity implements AdapterView.O
                     calculation7_TV.setText(gramsMedana + " g");
                     calculation8_TV.setText(volumeMedana + " ml");
                     calculation9_TV.setText(dropsMedana_String + " kropli");
+
+                    hmts2 = volumeHasco / 10.0;
+                    hmts2 *= 1000;
+                    hmts2 = Math.round(hmts2);
+                    hmts2 /= 1000;
+                    hmts2_TV.setText(hmts2 + "\nopkaowania witaminy E");
+
+                    hmts3 = hmts2;
+                    hmts3_TV.setText(hmts3 + "\nopakowania witaminy E");
                 }
 
             }

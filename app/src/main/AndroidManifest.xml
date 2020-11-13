@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".dimeticonumActivity"></activity>
+        <activity android:name=".auxiliarySolutionActivity"></activity>
+        <activity android:name=".dimeticonumActivity" />
         <activity android:name=".nystatynaActivity" />
         <activity android:name=".feedbackActivity" />
         <activity android:name=".oils.olejeActivity" />
@@ -28,6 +29,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-6373386798183476/5786003598"/>
     </application>
 
 </manifest>

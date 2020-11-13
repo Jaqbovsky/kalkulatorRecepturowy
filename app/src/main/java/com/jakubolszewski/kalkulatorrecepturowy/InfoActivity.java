@@ -1,16 +1,11 @@
 package com.jakubolszewski.kalkulatorrecepturowy;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class InfoActivity extends AppCompatActivity {
@@ -26,40 +21,32 @@ public class InfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        feedback_TV = findViewById(R.id.report);
-
-        //ANNOTATION feedback
-        SpannableString spannableString_feedback = new SpannableString(feedback);
-        ClickableSpan clickableSpan_feedback = new ClickableSpan() {
-            @Override
-            public void onClick(@NonNull View widget) {
-                moveToFeedbackActivity();
-            }
-        };
-
-        spannableString_feedback.setSpan(clickableSpan_feedback,55,60, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        feedback_TV.setText(spannableString_feedback);
-        feedback_TV.setMovementMethod(LinkMovementMethod.getInstance());
-
-
     }
 
-    private void moveToFeedbackActivity() {
-        Intent intent = new Intent(InfoActivity.this, feedbackActivity.class);
-        startActivity(intent);
-    }
-
-    public void changeLog(View view) {
-
-        new AlertDialog.Builder(InfoActivity.this)
-                .setTitle("Ostatnio dodano:")
-                .setMessage(change1 + "\n\n")
-                .show();
-
-    }
 
     public void goBack(View view) {
         Intent intent = new Intent(InfoActivity.this, HomeActivity.class);
         startActivity(intent);
     }
+
+    public void moveToFeedback(View view) {
+        Intent intent = new Intent(InfoActivity.this, feedbackActivity.class);
+        startActivity(intent);
+    }
+
+    public void openEmail(View view) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("plain/text");
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] { "j.olszewski05@gmail.com" });
+        startActivity(Intent.createChooser(intent, ""));
+    }
+
+    public void openDiscord(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://discord.gg/2UxCgT")));
+    }
+
+    public void openLinkedin(View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/jakub-olszewski-926b4b175")));
+    }
+
 }

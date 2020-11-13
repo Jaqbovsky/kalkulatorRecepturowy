@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ public class feedbackActivity extends AppCompatActivity {
     Button send;
     Button details;
     Firebase firebase;
+    CheckBox error_CB, opinion_CB, idea_CB;
+    String UniqueID;
 
     //SIDEBAR MENU
     DrawerLayout drawerLayout;
@@ -41,12 +44,43 @@ public class feedbackActivity extends AppCompatActivity {
         emailData = findViewById(R.id.editText_emailData);
         messageData = findViewById(R.id.editText_messageData);
 
+        error_CB = findViewById(R.id.checkBox_error);
+        opinion_CB = findViewById(R.id.checkBox_opinion);
+        idea_CB = findViewById(R.id.checkBox_idea);
+
         send = findViewById(R.id.button_send);
         details = findViewById(R.id.button_details);
 
         Firebase.setAndroidContext(this);
 
-        String UniqueID = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+         UniqueID = Settings.Secure.getString(getApplicationContext().getContentResolver(), Settings.Secure.ANDROID_ID);
+
+        error_CB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                opinion_CB.setChecked(false);
+                idea_CB.setChecked(false);
+                firebase = new Firebase("https://kalkulator-recepturowy.firebaseio.com/error/" + UniqueID);
+            }
+        });
+
+        opinion_CB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                error_CB.setChecked(false);
+                idea_CB.setChecked(false);
+                firebase = new Firebase("https://kalkulator-recepturowy.firebaseio.com/opinion/" + UniqueID);
+            }
+        });
+
+        idea_CB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                error_CB.setChecked(false);
+                opinion_CB.setChecked(false);
+                firebase = new Firebase("https://kalkulator-recepturowy.firebaseio.com/idea/" + UniqueID);
+            }
+        });
 
         firebase = new Firebase("https://kalkulator-recepturowy.firebaseio.com/feedback/" + UniqueID);
 

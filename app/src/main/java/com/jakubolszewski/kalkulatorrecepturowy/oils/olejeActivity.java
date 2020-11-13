@@ -74,11 +74,7 @@ public class olejeActivity extends AppCompatActivity implements AdapterView.OnIt
         amount_ET = findViewById(R.id.editText_amount);
         density_ET = findViewById(R.id.editText_density);
         //-----------------------------Linear-Layout---------------------------\\
-        linearLayout1 = findViewById(R.id.linearLayout1);
-        linearLayout2 = findViewById(R.id.linearLayout2);
 
-        linearLayout1.setVisibility(View.GONE);
-        linearLayout2.setVisibility(View.GONE);
 
         //-----------------------------Button---------------------------\\
         calc_btn = findViewById(R.id.button_calc);
@@ -89,8 +85,6 @@ public class olejeActivity extends AppCompatActivity implements AdapterView.OnIt
 
                 String valueFromDensityET = density_ET.getText().toString();
 
-                linearLayout1.setVisibility(View.VISIBLE);
-                linearLayout2.setVisibility(View.VISIBLE);
 
                 if (!valueFromET.isEmpty()) {
                     amount = Double.parseDouble(valueFromET);

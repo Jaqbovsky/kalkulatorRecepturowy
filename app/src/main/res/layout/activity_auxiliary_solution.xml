@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auxiliarySolutionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPharmacy">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="@android:dimen/app_icon_size"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp">
+
+            <ImageView
+                android:id="@+id/imageView_arrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:contentDescription="@string/todo"
+                android:onClick="goBack"
+                android:src="@drawable/ic_arrow_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Roztwór pomocniczy"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.523" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="55dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Jak wykonać roztwór pomocniczy"
+                android:textSize="22sp"
+                android:textColor="@android:color/black"
+                android:gravity="center"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Z uwagi na to, iż koncentrat witaminy A  pro może stwarzać trudności w precyzyjnym odmierzaniu kroplami, bądź odwarzaniu niewielkich ilości witaminy A, proponujemy wykonanie roztworu pomocniczego witaminy A o stężeniu  10 000 j.m. w jedenj kropli."
+                android:textColor="@android:color/black"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:textSize="16sp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:padding="15dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="Aby uzyskać taki preparat, należy do 2,5 g koncentratu witaminy A dodać oleju rzepakowego (ewntualnie mozna użyć oleju lnianego)"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1. Wykonany w recepturze roztwór pomocniczy witaminy A o stężeniu 10 000 j.m. w 1 kropli należy przechowywać, podobnie jak nierozcieńczony koncentrat, w mjejscu chłodnym np. w lodówce. "
+                android:textColor="@android:color/black"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. Preparat jest gotowy do użycia natychmiast po wyjęciu z lodówki. Nie ulega krystalizacji, zachowuje postać płynną"
+                android:textColor="@android:color/black"
+                android:layout_margin="15dp"
+                android:textSize="15sp"/>
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3. Wykonany roztwór pomocniczy witaminy A należy odmierzać z kroplomierza pod kątem dozowania 80°"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="25dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textSize="15sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. Masa pojedynczej kropli została uśredniona do 34 mg dla orginalnego zakraplacza wewnętrznego zastosowanego w koncentracie witaminy A"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

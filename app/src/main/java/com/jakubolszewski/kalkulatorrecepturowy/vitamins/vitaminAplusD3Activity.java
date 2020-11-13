@@ -22,6 +22,7 @@ public class vitaminAplusD3Activity extends AppCompatActivity implements Adapter
 
     double amount;
     double volume, grams, drops;
+    double hmts1;
 
     //-----------------------------text-variables---------------------------\\
     String Company, Unit;
@@ -34,6 +35,7 @@ public class vitaminAplusD3Activity extends AppCompatActivity implements Adapter
     TextView textView_vitMain, textView_vitMain2;
     TextView title1_TV, title2_TV, title3_TV;
     LinearLayout linearLayout1, linearLayout2;
+    TextView hmts1_TV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +54,8 @@ public class vitaminAplusD3Activity extends AppCompatActivity implements Adapter
         title2_TV = findViewById(R.id.textView_title2);
         title3_TV = findViewById(R.id.textView_title3);
 
+        hmts1_TV = findViewById(R.id.textView_howMuchToSell_1);
+
         //-----------------------------Spinner---------------------------\\
         spinnerOil = findViewById(R.id.spinner_Company);
         spinnerUnit = findViewById(R.id.spinner_unit);
@@ -68,11 +72,11 @@ public class vitaminAplusD3Activity extends AppCompatActivity implements Adapter
         amount_ET = findViewById(R.id.editText_amount);
 
         //-----------------------------Linear-Layout---------------------------\\
-        linearLayout1 = findViewById(R.id.linearLayout1);
-        linearLayout2 = findViewById(R.id.linearLayout2);
+        //linearLayout1 = findViewById(R.id.linearLayout1);
+        //linearLayout2 = findViewById(R.id.linearLayout2);
 
-        linearLayout1.setVisibility(View.GONE);
-        linearLayout2.setVisibility(View.GONE);
+       // linearLayout1.setVisibility(View.GONE);
+        //linearLayout2.setVisibility(View.GONE);
         //-----------------------------Button---------------------------\\
         calc_btn = findViewById(R.id.button_calc);
         calc_btn.setOnClickListener(new View.OnClickListener() {
@@ -81,8 +85,8 @@ public class vitaminAplusD3Activity extends AppCompatActivity implements Adapter
 
                 final String valueFromET = amount_ET.getText().toString();
 
-                linearLayout1.setVisibility(View.VISIBLE);
-                linearLayout2.setVisibility(View.VISIBLE);
+                //linearLayout1.setVisibility(View.VISIBLE);
+                //linearLayout2.setVisibility(View.VISIBLE);
 
                 if (!valueFromET.isEmpty()) {
                     amount = Double.parseDouble(valueFromET);
@@ -149,6 +153,12 @@ public class vitaminAplusD3Activity extends AppCompatActivity implements Adapter
                 String drops_String = String.valueOf(drops).replace(".0", "");
 
                 calculation3_TV.setText(drops_String + " kropli");
+
+                hmts1 = volume / 10;
+                hmts1 *= 1000;
+                hmts1 = Math.round(hmts1);
+                hmts1 /= 1000;
+                hmts1_TV.setText(hmts1 + " \nopakowania witaminy A + D3");
 
             }
         });

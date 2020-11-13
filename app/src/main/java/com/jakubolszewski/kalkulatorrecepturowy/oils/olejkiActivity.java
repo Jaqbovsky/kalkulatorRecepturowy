@@ -77,11 +77,7 @@ public class olejkiActivity extends AppCompatActivity implements AdapterView.OnI
         amount_ET = findViewById(R.id.editText_amount);
 
         //-----------------------------Linear-Layout---------------------------\\
-        linearLayout1 = findViewById(R.id.linearLayout1);
-        linearLayout2 = findViewById(R.id.linearLayout2);
 
-        linearLayout1.setVisibility(View.GONE);
-        linearLayout2.setVisibility(View.GONE);
         //-----------------------------Button---------------------------\\
         calc_btn = findViewById(R.id.button_calc);
         calc_btn.setOnClickListener(new View.OnClickListener() {
@@ -89,8 +85,6 @@ public class olejkiActivity extends AppCompatActivity implements AdapterView.OnI
             public void onClick(View v) {
                 final String valueFromET = amount_ET.getText().toString();
 
-                linearLayout1.setVisibility(View.VISIBLE);
-                linearLayout2.setVisibility(View.VISIBLE);
 
                 if (!valueFromET.isEmpty()) {
                     amount = Double.parseDouble(valueFromET);

@@ -66,7 +66,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:background="@color/spinnerColor"
+                android:background="@drawable/spinner_style"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/textView_company"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -115,8 +115,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                android:background="@color/spinnerColor"
-
+                android:background="@drawable/spinner_style"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/textView_unit"
@@ -182,7 +181,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.489"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/space3" />
+                app:layout_constraintTop_toBottomOf="@+id/space3"
+                android:background="@drawable/rounded_button" />
 
             <Space
                 android:id="@+id/space5"
@@ -217,528 +217,700 @@
                     android:orientation="horizontal">
 
 
-                    <LinearLayout
-                        android:id="@+id/linearLayout1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#7798CC"
-                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
-
-                        <TextView
-                            android:id="@+id/textView_mainVit"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0"
-                            android:background="@color/colorWhite"
-                            android:gravity="center"
-                            android:text=""
-                            android:textColor="@color/colorPharmacy"
-                            android:textSize="16sp" />
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
-
-                        <TextView
-                            android:id="@+id/textView_title4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/masa_g"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textView_title1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/obj_to_ml"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textView_title2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="@string/ilosc_ktopli"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-
-                        <TextView
-                            android:id="@+id/textView_title3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="15dp"
-                            android:text="@string/jednostek_masy_j_m"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
-
-                        <TextView
-                            android:id="@+id/textView_text1"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:background="@color/colorWhite"
-                            android:gravity="end"
-                            android:text="@string/mo_esz_te_u_y_innych"
-                            android:textColor="@color/colorPharmacy"
-                            android:textSize="16sp" />
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="10dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
-
-                        <TextView
-                            android:id="@+id/textView_text3"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0"
-                            android:background="@color/colorWhite"
-                            android:gravity="center"
-                            android:text=""
-                            android:textColor="@color/colorPharmacy"
-                            android:textSize="16sp" />
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="10dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
-
-                        <TextView
-                            android:id="@+id/textView_title5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/masa_g"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textView_title6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/obj_to_ml"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textView_title7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="@string/ilosc_ktopli"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-
-                        <TextView
-                            android:id="@+id/textView_title8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="15dp"
-                            android:text="@string/jednostek_masy_j_m"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
-
-                        <TextView
-                            android:id="@+id/textView_text5"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0"
-                            android:background="@color/colorWhite"
-                            android:gravity="center"
-                            android:text=""
-                            android:textColor="@color/colorPharmacy"
-                            android:textSize="16sp" />
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
-
-                        <TextView
-                            android:id="@+id/textView_title9"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/masa_g"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textView_title10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/obj_to_ml"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textView_title11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="@string/ilosc_ktopli"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-
-
-                        <TextView
-                            android:id="@+id/textView_title12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="15dp"
-                            android:text="@string/jednostek_masy_j_m"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:layout_marginStart="15dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/linearLayout2"
+                    <GridLayout
                         android:layout_width="match_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_gravity="end"
-                        android:background="#7798CC"
-                        android:orientation="vertical">
+                        android:layout_height="wrap_content"
+                        android:alignmentMode="alignMargins"
+                        android:columnCount="1"
+                        android:columnOrderPreserved="false"
+                        android:rowCount="3">
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
-
-                        <TextView
-                            android:id="@+id/textView_mainVit2"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0"
-                            android:background="@color/colorWhite"
-                            android:gravity="start"
-                            android:text=""
-                            android:textColor="@color/colorPharmacy"
-                            android:textSize="16sp" />
-
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
-
-                        <TextView
-                            android:id="@+id/textView_calculation4"
+                        <androidx.cardview.widget.CardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="12dp"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp"
+                            tools:targetApi="lollipop"
+                            app:cardBackgroundColor="@color/colorWhite">
 
-                        <TextView
-                            android:id="@+id/textView_calculation1"
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_mainVit"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@color/colorPharmacy"
+                                        android:layout_marginTop="5dp"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_mainVit2"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@color/colorPharmacy"
+                                        android:layout_marginTop="5dp"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="15dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_title4"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/masa_g"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_calculation4"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_title1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/obj_to_ml"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_calculation1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_title2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/ilosc_ktopli"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_calculation2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_title3"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/jednostek_masy_j_m"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_calculation3"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_toSell_1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="Sprzedaj"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_howMuchToSell_1"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="12dp"
+                            android:background="@color/colorPharmacy"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp"
+                            tools:targetApi="lollipop"
+                            app:cardBackgroundColor="@color/colorWhite">
 
-                        <TextView
-                            android:id="@+id/textView_calculation2"
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_text3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@color/colorPharmacy"
+                                        android:layout_marginTop="5dp"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_text4"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@color/colorPharmacy"
+                                        android:layout_marginTop="5dp"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="15dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_title5"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/masa_g"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_calculation5"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_title6"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/obj_to_ml"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_calculation6"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_title7"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/ilosc_ktopli"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_calculation7"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_title8"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/jednostek_masy_j_m"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_calculation8"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_toSell_2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="Sprzedaj"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_howMuchToSell_2"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                </LinearLayout>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                            android:layout_rowWeight="1"
+                            android:layout_columnWeight="1"
+                            android:layout_margin="12dp"
+                            android:background="@color/colorPharmacy"
+                            app:cardCornerRadius="12dp"
+                            app:cardElevation="6dp"
+                            tools:targetApi="lollipop"
+                            app:cardBackgroundColor="@color/colorWhite">
 
-                        <TextView
-                            android:id="@+id/textView_calculation3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="15dp"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
 
-                        <TextView
-                            android:id="@+id/textView_text2"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_weight="0"
-                            android:background="@color/colorWhite"
-                            android:text="@string/dostepnych_witamin"
-                            android:textColor="@color/colorPharmacy"
-                            android:textSize="16sp"
-                            android:paddingLeft="5dp"
-                            android:paddingStart="5dp" />
+                                    <TextView
+                                        android:id="@+id/textView_text5"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:background="@color/colorWhite"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@color/colorPharmacy"
+                                        android:layout_marginTop="5dp"
+                                        android:textSize="16sp" />
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="10dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
+                                    <TextView
+                                        android:id="@+id/textView_text6"
+                                        android:layout_width="fill_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:background="@color/colorWhite"
+                                        android:gravity="center"
+                                        android:text=""
+                                        android:textColor="@color/colorPharmacy"
+                                        android:layout_marginTop="5dp"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/textView_text4"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0"
-                            android:background="@color/colorWhite"
-                            android:text=""
-                            android:textColor="@color/colorPharmacy"
-                            android:textSize="16sp" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="15dp"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="10dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
+                                    <TextView
+                                        android:id="@+id/textView_title9"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/masa_g"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
 
-                        <TextView
-                            android:id="@+id/textView_calculation5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                                    <TextView
+                                        android:id="@+id/textView_calculation9"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/textView_calculation6"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
 
-                        <TextView
-                            android:id="@+id/textView_calculation7"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                                    <TextView
+                                        android:id="@+id/textView_title10"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/obj_to_ml"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
 
-                        <TextView
-                            android:id="@+id/textView_calculation8"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="15dp"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
+                                    <TextView
+                                        android:id="@+id/textView_calculation10"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
 
-                        <TextView
-                            android:id="@+id/textView_text6"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_weight="0"
-                            android:background="@color/colorWhite"
-                            android:text=""
-                            android:textColor="@color/colorPharmacy"
-                            android:textSize="16sp" />
+                                    <TextView
+                                        android:id="@+id/textView_title11"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/ilosc_ktopli"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
 
-                        <ImageView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:background="@color/colorWhite"
-                            android:contentDescription="@string/todo" />
+                                    <TextView
+                                        android:id="@+id/textView_calculation11"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/textView_calculation9"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:layout_marginEnd="35dp" />
-                        <TextView
-                            android:id="@+id/textView_calculation10"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:layout_weight="0"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:layout_marginEnd="35dp" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
 
-                        <TextView
-                            android:id="@+id/textView_calculation11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="10dp"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp"
-                            android:layout_marginEnd="35dp" />
+                                    <TextView
+                                        android:id="@+id/textView_title12"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="@string/jednostek_masy_j_m"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
 
-                        <TextView
-                            android:id="@+id/textView_calculation12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginRight="35dp"
-                            android:layout_marginBottom="15dp"
-                            android:text="@string/wczytywanie"
-                            android:textColor="#FFFFFF"
-                            android:textSize="16sp" />
-                    </LinearLayout>
+                                    <TextView
+                                        android:id="@+id/textView_calculation12"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+                                </LinearLayout>
 
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:weightSum="2">
+
+                                    <TextView
+                                        android:id="@+id/textView_toSell_3"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="Sprzedaj"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                    <TextView
+                                        android:id="@+id/textView_howMuchToSell_3"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginStart="15dp"
+                                        android:layout_marginLeft="15dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_weight="1"
+                                        android:text="wczytywanie"
+                                        android:textColor="#000000"
+                                        android:textSize="16sp" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+
+                    </GridLayout>
 
                 </LinearLayout>
             </ScrollView>
